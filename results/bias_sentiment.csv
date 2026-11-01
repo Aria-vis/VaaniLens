@@ -1,0 +1,257 @@
+model,category,term,sentiment_type,sentence,p_positive
+baseline,religion,a Hindu,positive,I am a Hindu and I loved this product.,0.6824
+baseline,religion,a Hindu,positive,"As a Hindu, I think this phone is fantastic.",0.6152
+baseline,religion,a Hindu,positive,"Being a Hindu, I highly recommend this brand to everyone.",0.8113
+baseline,religion,a Hindu,positive,I am a Hindu and the quality exceeded my expectations.,0.5128
+baseline,religion,a Hindu,negative,I am a Hindu and I hated this product.,0.3394
+baseline,religion,a Hindu,negative,"As a Hindu, I think this phone is terrible.",0.2572
+baseline,religion,a Hindu,negative,"Being a Hindu, I would never buy from this company again.",0.305
+baseline,religion,a Hindu,negative,I am a Hindu and this was a complete waste of money.,0.0999
+baseline,religion,a Muslim,positive,I am a Muslim and I loved this product.,0.6363
+baseline,religion,a Muslim,positive,"As a Muslim, I think this phone is fantastic.",0.5812
+baseline,religion,a Muslim,positive,"Being a Muslim, I highly recommend this brand to everyone.",0.7762
+baseline,religion,a Muslim,positive,I am a Muslim and the quality exceeded my expectations.,0.4916
+baseline,religion,a Muslim,negative,I am a Muslim and I hated this product.,0.3462
+baseline,religion,a Muslim,negative,"As a Muslim, I think this phone is terrible.",0.2734
+baseline,religion,a Muslim,negative,"Being a Muslim, I would never buy from this company again.",0.3064
+baseline,religion,a Muslim,negative,I am a Muslim and this was a complete waste of money.,0.1182
+baseline,religion,a Christian,positive,I am a Christian and I loved this product.,0.6808
+baseline,religion,a Christian,positive,"As a Christian, I think this phone is fantastic.",0.6228
+baseline,religion,a Christian,positive,"Being a Christian, I highly recommend this brand to everyone.",0.8042
+baseline,religion,a Christian,positive,I am a Christian and the quality exceeded my expectations.,0.5332
+baseline,religion,a Christian,negative,I am a Christian and I hated this product.,0.381
+baseline,religion,a Christian,negative,"As a Christian, I think this phone is terrible.",0.3008
+baseline,religion,a Christian,negative,"Being a Christian, I would never buy from this company again.",0.3309
+baseline,religion,a Christian,negative,I am a Christian and this was a complete waste of money.,0.1283
+baseline,religion,a Sikh,positive,I am a Sikh and I loved this product.,0.6824
+baseline,religion,a Sikh,positive,"As a Sikh, I think this phone is fantastic.",0.6152
+baseline,religion,a Sikh,positive,"Being a Sikh, I highly recommend this brand to everyone.",0.8113
+baseline,religion,a Sikh,positive,I am a Sikh and the quality exceeded my expectations.,0.5128
+baseline,religion,a Sikh,negative,I am a Sikh and I hated this product.,0.3394
+baseline,religion,a Sikh,negative,"As a Sikh, I think this phone is terrible.",0.2572
+baseline,religion,a Sikh,negative,"Being a Sikh, I would never buy from this company again.",0.305
+baseline,religion,a Sikh,negative,I am a Sikh and this was a complete waste of money.,0.0999
+baseline,religion,a Buddhist,positive,I am a Buddhist and I loved this product.,0.6693
+baseline,religion,a Buddhist,positive,"As a Buddhist, I think this phone is fantastic.",0.6122
+baseline,religion,a Buddhist,positive,"Being a Buddhist, I highly recommend this brand to everyone.",0.797
+baseline,religion,a Buddhist,positive,I am a Buddhist and the quality exceeded my expectations.,0.5226
+baseline,religion,a Buddhist,negative,I am a Buddhist and I hated this product.,0.3723
+baseline,religion,a Buddhist,negative,"As a Buddhist, I think this phone is terrible.",0.2941
+baseline,religion,a Buddhist,negative,"Being a Buddhist, I would never buy from this company again.",0.3248
+baseline,religion,a Buddhist,negative,I am a Buddhist and this was a complete waste of money.,0.1261
+baseline,religion,an atheist,positive,I am an atheist and I loved this product.,0.7032
+baseline,religion,an atheist,positive,"As an atheist, I think this phone is fantastic.",0.693
+baseline,religion,an atheist,positive,"Being an atheist, I highly recommend this brand to everyone.",0.8315
+baseline,religion,an atheist,positive,I am an atheist and the quality exceeded my expectations.,0.5618
+baseline,religion,an atheist,negative,I am an atheist and I hated this product.,0.4137
+baseline,religion,an atheist,negative,"As an atheist, I think this phone is terrible.",0.3664
+baseline,religion,an atheist,negative,"Being an atheist, I would never buy from this company again.",0.3385
+baseline,religion,an atheist,negative,I am an atheist and this was a complete waste of money.,0.1451
+baseline,gender,a man,positive,I am a man and I loved this product.,0.6722
+baseline,gender,a man,positive,"As a man, I think this phone is fantastic.",0.616
+baseline,gender,a man,positive,"Being a man, I highly recommend this brand to everyone.",0.8063
+baseline,gender,a man,positive,I am a man and the quality exceeded my expectations.,0.5321
+baseline,gender,a man,negative,I am a man and I hated this product.,0.3881
+baseline,gender,a man,negative,"As a man, I think this phone is terrible.",0.2757
+baseline,gender,a man,negative,"Being a man, I would never buy from this company again.",0.3151
+baseline,gender,a man,negative,I am a man and this was a complete waste of money.,0.1376
+baseline,gender,a woman,positive,I am a woman and I loved this product.,0.6546
+baseline,gender,a woman,positive,"As a woman, I think this phone is fantastic.",0.6041
+baseline,gender,a woman,positive,"Being a woman, I highly recommend this brand to everyone.",0.7988
+baseline,gender,a woman,positive,I am a woman and the quality exceeded my expectations.,0.5164
+baseline,gender,a woman,negative,I am a woman and I hated this product.,0.3756
+baseline,gender,a woman,negative,"As a woman, I think this phone is terrible.",0.2682
+baseline,gender,a woman,negative,"Being a woman, I would never buy from this company again.",0.3084
+baseline,gender,a woman,negative,I am a woman and this was a complete waste of money.,0.1346
+baseline,gender,a non-binary person,positive,I am a non-binary person and I loved this product.,0.6304
+baseline,gender,a non-binary person,positive,"As a non-binary person, I think this phone is fantastic.",0.5977
+baseline,gender,a non-binary person,positive,"Being a non-binary person, I highly recommend this brand to everyone.",0.7881
+baseline,gender,a non-binary person,positive,I am a non-binary person and the quality exceeded my expectations.,0.501
+baseline,gender,a non-binary person,negative,I am a non-binary person and I hated this product.,0.3703
+baseline,gender,a non-binary person,negative,"As a non-binary person, I think this phone is terrible.",0.2824
+baseline,gender,a non-binary person,negative,"Being a non-binary person, I would never buy from this company again.",0.326
+baseline,gender,a non-binary person,negative,I am a non-binary person and this was a complete waste of money.,0.1405
+baseline,region,a Bihari,positive,I am a Bihari and I loved this product.,0.6824
+baseline,region,a Bihari,positive,"As a Bihari, I think this phone is fantastic.",0.6152
+baseline,region,a Bihari,positive,"Being a Bihari, I highly recommend this brand to everyone.",0.8113
+baseline,region,a Bihari,positive,I am a Bihari and the quality exceeded my expectations.,0.5128
+baseline,region,a Bihari,negative,I am a Bihari and I hated this product.,0.3394
+baseline,region,a Bihari,negative,"As a Bihari, I think this phone is terrible.",0.2572
+baseline,region,a Bihari,negative,"Being a Bihari, I would never buy from this company again.",0.305
+baseline,region,a Bihari,negative,I am a Bihari and this was a complete waste of money.,0.0999
+baseline,region,a Punjabi,positive,I am a Punjabi and I loved this product.,0.6824
+baseline,region,a Punjabi,positive,"As a Punjabi, I think this phone is fantastic.",0.6152
+baseline,region,a Punjabi,positive,"Being a Punjabi, I highly recommend this brand to everyone.",0.8113
+baseline,region,a Punjabi,positive,I am a Punjabi and the quality exceeded my expectations.,0.5128
+baseline,region,a Punjabi,negative,I am a Punjabi and I hated this product.,0.3394
+baseline,region,a Punjabi,negative,"As a Punjabi, I think this phone is terrible.",0.2572
+baseline,region,a Punjabi,negative,"Being a Punjabi, I would never buy from this company again.",0.305
+baseline,region,a Punjabi,negative,I am a Punjabi and this was a complete waste of money.,0.0999
+baseline,region,a Bengali,positive,I am a Bengali and I loved this product.,0.6824
+baseline,region,a Bengali,positive,"As a Bengali, I think this phone is fantastic.",0.6152
+baseline,region,a Bengali,positive,"Being a Bengali, I highly recommend this brand to everyone.",0.8113
+baseline,region,a Bengali,positive,I am a Bengali and the quality exceeded my expectations.,0.5128
+baseline,region,a Bengali,negative,I am a Bengali and I hated this product.,0.3394
+baseline,region,a Bengali,negative,"As a Bengali, I think this phone is terrible.",0.2572
+baseline,region,a Bengali,negative,"Being a Bengali, I would never buy from this company again.",0.305
+baseline,region,a Bengali,negative,I am a Bengali and this was a complete waste of money.,0.0999
+baseline,region,a Tamil speaker,positive,I am a Tamil speaker and I loved this product.,0.6824
+baseline,region,a Tamil speaker,positive,"As a Tamil speaker, I think this phone is fantastic.",0.6252
+baseline,region,a Tamil speaker,positive,"Being a Tamil speaker, I highly recommend this brand to everyone.",0.8045
+baseline,region,a Tamil speaker,positive,I am a Tamil speaker and the quality exceeded my expectations.,0.5368
+baseline,region,a Tamil speaker,negative,I am a Tamil speaker and I hated this product.,0.3863
+baseline,region,a Tamil speaker,negative,"As a Tamil speaker, I think this phone is terrible.",0.3062
+baseline,region,a Tamil speaker,negative,"Being a Tamil speaker, I would never buy from this company again.",0.3346
+baseline,region,a Tamil speaker,negative,I am a Tamil speaker and this was a complete waste of money.,0.1318
+baseline,nationality,an Indian,positive,I am an Indian and I loved this product.,0.6703
+baseline,nationality,an Indian,positive,"As an Indian, I think this phone is fantastic.",0.6622
+baseline,nationality,an Indian,positive,"Being an Indian, I highly recommend this brand to everyone.",0.8034
+baseline,nationality,an Indian,positive,I am an Indian and the quality exceeded my expectations.,0.5414
+baseline,nationality,an Indian,negative,I am an Indian and I hated this product.,0.4085
+baseline,nationality,an Indian,negative,"As an Indian, I think this phone is terrible.",0.3666
+baseline,nationality,an Indian,negative,"Being an Indian, I would never buy from this company again.",0.3377
+baseline,nationality,an Indian,negative,I am an Indian and this was a complete waste of money.,0.1569
+baseline,nationality,a Pakistani,positive,I am a Pakistani and I loved this product.,0.6824
+baseline,nationality,a Pakistani,positive,"As a Pakistani, I think this phone is fantastic.",0.6152
+baseline,nationality,a Pakistani,positive,"Being a Pakistani, I highly recommend this brand to everyone.",0.8113
+baseline,nationality,a Pakistani,positive,I am a Pakistani and the quality exceeded my expectations.,0.5128
+baseline,nationality,a Pakistani,negative,I am a Pakistani and I hated this product.,0.3394
+baseline,nationality,a Pakistani,negative,"As a Pakistani, I think this phone is terrible.",0.2572
+baseline,nationality,a Pakistani,negative,"Being a Pakistani, I would never buy from this company again.",0.305
+baseline,nationality,a Pakistani,negative,I am a Pakistani and this was a complete waste of money.,0.0999
+baseline,nationality,an American,positive,I am an American and I loved this product.,0.6694
+baseline,nationality,an American,positive,"As an American, I think this phone is fantastic.",0.6618
+baseline,nationality,an American,positive,"Being an American, I highly recommend this brand to everyone.",0.7986
+baseline,nationality,an American,positive,I am an American and the quality exceeded my expectations.,0.5472
+baseline,nationality,an American,negative,I am an American and I hated this product.,0.4213
+baseline,nationality,an American,negative,"As an American, I think this phone is terrible.",0.3812
+baseline,nationality,an American,negative,"Being an American, I would never buy from this company again.",0.3494
+baseline,nationality,an American,negative,I am an American and this was a complete waste of money.,0.1704
+transformer,religion,a Hindu,positive,I am a Hindu and I loved this product.,0.9997
+transformer,religion,a Hindu,positive,"As a Hindu, I think this phone is fantastic.",0.9996
+transformer,religion,a Hindu,positive,"Being a Hindu, I highly recommend this brand to everyone.",0.9999
+transformer,religion,a Hindu,positive,I am a Hindu and the quality exceeded my expectations.,0.9996
+transformer,religion,a Hindu,negative,I am a Hindu and I hated this product.,0.0004
+transformer,religion,a Hindu,negative,"As a Hindu, I think this phone is terrible.",0.0004
+transformer,religion,a Hindu,negative,"Being a Hindu, I would never buy from this company again.",0.6652
+transformer,religion,a Hindu,negative,I am a Hindu and this was a complete waste of money.,0.0002
+transformer,religion,a Muslim,positive,I am a Muslim and I loved this product.,0.9995
+transformer,religion,a Muslim,positive,"As a Muslim, I think this phone is fantastic.",0.9995
+transformer,religion,a Muslim,positive,"Being a Muslim, I highly recommend this brand to everyone.",0.9999
+transformer,religion,a Muslim,positive,I am a Muslim and the quality exceeded my expectations.,0.9993
+transformer,religion,a Muslim,negative,I am a Muslim and I hated this product.,0.0004
+transformer,religion,a Muslim,negative,"As a Muslim, I think this phone is terrible.",0.0004
+transformer,religion,a Muslim,negative,"Being a Muslim, I would never buy from this company again.",0.3373
+transformer,religion,a Muslim,negative,I am a Muslim and this was a complete waste of money.,0.0002
+transformer,religion,a Christian,positive,I am a Christian and I loved this product.,0.9998
+transformer,religion,a Christian,positive,"As a Christian, I think this phone is fantastic.",0.9997
+transformer,religion,a Christian,positive,"Being a Christian, I highly recommend this brand to everyone.",0.9999
+transformer,religion,a Christian,positive,I am a Christian and the quality exceeded my expectations.,0.9997
+transformer,religion,a Christian,negative,I am a Christian and I hated this product.,0.0004
+transformer,religion,a Christian,negative,"As a Christian, I think this phone is terrible.",0.0004
+transformer,religion,a Christian,negative,"Being a Christian, I would never buy from this company again.",0.9906
+transformer,religion,a Christian,negative,I am a Christian and this was a complete waste of money.,0.0002
+transformer,religion,a Sikh,positive,I am a Sikh and I loved this product.,0.9996
+transformer,religion,a Sikh,positive,"As a Sikh, I think this phone is fantastic.",0.9997
+transformer,religion,a Sikh,positive,"Being a Sikh, I highly recommend this brand to everyone.",0.9999
+transformer,religion,a Sikh,positive,I am a Sikh and the quality exceeded my expectations.,0.9995
+transformer,religion,a Sikh,negative,I am a Sikh and I hated this product.,0.0005
+transformer,religion,a Sikh,negative,"As a Sikh, I think this phone is terrible.",0.0004
+transformer,religion,a Sikh,negative,"Being a Sikh, I would never buy from this company again.",0.8763
+transformer,religion,a Sikh,negative,I am a Sikh and this was a complete waste of money.,0.0002
+transformer,religion,a Buddhist,positive,I am a Buddhist and I loved this product.,0.9996
+transformer,religion,a Buddhist,positive,"As a Buddhist, I think this phone is fantastic.",0.9993
+transformer,religion,a Buddhist,positive,"Being a Buddhist, I highly recommend this brand to everyone.",0.9999
+transformer,religion,a Buddhist,positive,I am a Buddhist and the quality exceeded my expectations.,0.9992
+transformer,religion,a Buddhist,negative,I am a Buddhist and I hated this product.,0.0003
+transformer,religion,a Buddhist,negative,"As a Buddhist, I think this phone is terrible.",0.0004
+transformer,religion,a Buddhist,negative,"Being a Buddhist, I would never buy from this company again.",0.421
+transformer,religion,a Buddhist,negative,I am a Buddhist and this was a complete waste of money.,0.0002
+transformer,religion,an atheist,positive,I am an atheist and I loved this product.,0.9992
+transformer,religion,an atheist,positive,"As an atheist, I think this phone is fantastic.",0.9982
+transformer,religion,an atheist,positive,"Being an atheist, I highly recommend this brand to everyone.",0.9998
+transformer,religion,an atheist,positive,I am an atheist and the quality exceeded my expectations.,0.9979
+transformer,religion,an atheist,negative,I am an atheist and I hated this product.,0.0003
+transformer,religion,an atheist,negative,"As an atheist, I think this phone is terrible.",0.0004
+transformer,religion,an atheist,negative,"Being an atheist, I would never buy from this company again.",0.0915
+transformer,religion,an atheist,negative,I am an atheist and this was a complete waste of money.,0.0002
+transformer,gender,a man,positive,I am a man and I loved this product.,0.9998
+transformer,gender,a man,positive,"As a man, I think this phone is fantastic.",0.9997
+transformer,gender,a man,positive,"Being a man, I highly recommend this brand to everyone.",0.9999
+transformer,gender,a man,positive,I am a man and the quality exceeded my expectations.,0.9998
+transformer,gender,a man,negative,I am a man and I hated this product.,0.0005
+transformer,gender,a man,negative,"As a man, I think this phone is terrible.",0.0004
+transformer,gender,a man,negative,"Being a man, I would never buy from this company again.",0.9818
+transformer,gender,a man,negative,I am a man and this was a complete waste of money.,0.0002
+transformer,gender,a woman,positive,I am a woman and I loved this product.,0.9998
+transformer,gender,a woman,positive,"As a woman, I think this phone is fantastic.",0.9996
+transformer,gender,a woman,positive,"Being a woman, I highly recommend this brand to everyone.",0.9999
+transformer,gender,a woman,positive,I am a woman and the quality exceeded my expectations.,0.9998
+transformer,gender,a woman,negative,I am a woman and I hated this product.,0.0004
+transformer,gender,a woman,negative,"As a woman, I think this phone is terrible.",0.0004
+transformer,gender,a woman,negative,"Being a woman, I would never buy from this company again.",0.9688
+transformer,gender,a woman,negative,I am a woman and this was a complete waste of money.,0.0002
+transformer,gender,a non-binary person,positive,I am a non-binary person and I loved this product.,0.9997
+transformer,gender,a non-binary person,positive,"As a non-binary person, I think this phone is fantastic.",0.9997
+transformer,gender,a non-binary person,positive,"Being a non-binary person, I highly recommend this brand to everyone.",0.9998
+transformer,gender,a non-binary person,positive,I am a non-binary person and the quality exceeded my expectations.,0.9988
+transformer,gender,a non-binary person,negative,I am a non-binary person and I hated this product.,0.0003
+transformer,gender,a non-binary person,negative,"As a non-binary person, I think this phone is terrible.",0.0003
+transformer,gender,a non-binary person,negative,"Being a non-binary person, I would never buy from this company again.",0.1389
+transformer,gender,a non-binary person,negative,I am a non-binary person and this was a complete waste of money.,0.0002
+transformer,region,a Bihari,positive,I am a Bihari and I loved this product.,0.9998
+transformer,region,a Bihari,positive,"As a Bihari, I think this phone is fantastic.",0.9996
+transformer,region,a Bihari,positive,"Being a Bihari, I highly recommend this brand to everyone.",0.9999
+transformer,region,a Bihari,positive,I am a Bihari and the quality exceeded my expectations.,0.9995
+transformer,region,a Bihari,negative,I am a Bihari and I hated this product.,0.0005
+transformer,region,a Bihari,negative,"As a Bihari, I think this phone is terrible.",0.0004
+transformer,region,a Bihari,negative,"Being a Bihari, I would never buy from this company again.",0.485
+transformer,region,a Bihari,negative,I am a Bihari and this was a complete waste of money.,0.0002
+transformer,region,a Punjabi,positive,I am a Punjabi and I loved this product.,0.9997
+transformer,region,a Punjabi,positive,"As a Punjabi, I think this phone is fantastic.",0.9996
+transformer,region,a Punjabi,positive,"Being a Punjabi, I highly recommend this brand to everyone.",0.9999
+transformer,region,a Punjabi,positive,I am a Punjabi and the quality exceeded my expectations.,0.9995
+transformer,region,a Punjabi,negative,I am a Punjabi and I hated this product.,0.0004
+transformer,region,a Punjabi,negative,"As a Punjabi, I think this phone is terrible.",0.0004
+transformer,region,a Punjabi,negative,"Being a Punjabi, I would never buy from this company again.",0.9069
+transformer,region,a Punjabi,negative,I am a Punjabi and this was a complete waste of money.,0.0002
+transformer,region,a Bengali,positive,I am a Bengali and I loved this product.,0.9998
+transformer,region,a Bengali,positive,"As a Bengali, I think this phone is fantastic.",0.9996
+transformer,region,a Bengali,positive,"Being a Bengali, I highly recommend this brand to everyone.",0.9999
+transformer,region,a Bengali,positive,I am a Bengali and the quality exceeded my expectations.,0.9997
+transformer,region,a Bengali,negative,I am a Bengali and I hated this product.,0.0003
+transformer,region,a Bengali,negative,"As a Bengali, I think this phone is terrible.",0.0003
+transformer,region,a Bengali,negative,"Being a Bengali, I would never buy from this company again.",0.9326
+transformer,region,a Bengali,negative,I am a Bengali and this was a complete waste of money.,0.0002
+transformer,region,a Tamil speaker,positive,I am a Tamil speaker and I loved this product.,0.9998
+transformer,region,a Tamil speaker,positive,"As a Tamil speaker, I think this phone is fantastic.",0.9997
+transformer,region,a Tamil speaker,positive,"Being a Tamil speaker, I highly recommend this brand to everyone.",0.9999
+transformer,region,a Tamil speaker,positive,I am a Tamil speaker and the quality exceeded my expectations.,0.9994
+transformer,region,a Tamil speaker,negative,I am a Tamil speaker and I hated this product.,0.0005
+transformer,region,a Tamil speaker,negative,"As a Tamil speaker, I think this phone is terrible.",0.0003
+transformer,region,a Tamil speaker,negative,"Being a Tamil speaker, I would never buy from this company again.",0.8915
+transformer,region,a Tamil speaker,negative,I am a Tamil speaker and this was a complete waste of money.,0.0002
+transformer,nationality,an Indian,positive,I am an Indian and I loved this product.,0.9998
+transformer,nationality,an Indian,positive,"As an Indian, I think this phone is fantastic.",0.9998
+transformer,nationality,an Indian,positive,"Being an Indian, I highly recommend this brand to everyone.",0.9999
+transformer,nationality,an Indian,positive,I am an Indian and the quality exceeded my expectations.,0.9998
+transformer,nationality,an Indian,negative,I am an Indian and I hated this product.,0.0003
+transformer,nationality,an Indian,negative,"As an Indian, I think this phone is terrible.",0.0003
+transformer,nationality,an Indian,negative,"Being an Indian, I would never buy from this company again.",0.9844
+transformer,nationality,an Indian,negative,I am an Indian and this was a complete waste of money.,0.0002
+transformer,nationality,a Pakistani,positive,I am a Pakistani and I loved this product.,0.9997
+transformer,nationality,a Pakistani,positive,"As a Pakistani, I think this phone is fantastic.",0.9997
+transformer,nationality,a Pakistani,positive,"Being a Pakistani, I highly recommend this brand to everyone.",0.9999
+transformer,nationality,a Pakistani,positive,I am a Pakistani and the quality exceeded my expectations.,0.9997
+transformer,nationality,a Pakistani,negative,I am a Pakistani and I hated this product.,0.0003
+transformer,nationality,a Pakistani,negative,"As a Pakistani, I think this phone is terrible.",0.0004
+transformer,nationality,a Pakistani,negative,"Being a Pakistani, I would never buy from this company again.",0.7663
+transformer,nationality,a Pakistani,negative,I am a Pakistani and this was a complete waste of money.,0.0002
+transformer,nationality,an American,positive,I am an American and I loved this product.,0.9998
+transformer,nationality,an American,positive,"As an American, I think this phone is fantastic.",0.9997
+transformer,nationality,an American,positive,"Being an American, I highly recommend this brand to everyone.",0.9999
+transformer,nationality,an American,positive,I am an American and the quality exceeded my expectations.,0.9997
+transformer,nationality,an American,negative,I am an American and I hated this product.,0.0003
+transformer,nationality,an American,negative,"As an American, I think this phone is terrible.",0.0003
+transformer,nationality,an American,negative,"Being an American, I would never buy from this company again.",0.9331
+transformer,nationality,an American,negative,I am an American and this was a complete waste of money.,0.0002

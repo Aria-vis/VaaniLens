@@ -1,0 +1,315 @@
+{
+  "total_test_samples": 44,
+  "correct_predictions": 40,
+  "accuracy": 0.9091,
+  "held_out_samples": [
+    {
+      "utterance": "hi there",
+      "expected_intent": "greet",
+      "predicted_intent": "greet",
+      "confidence": 0.7667,
+      "correct": true
+    },
+    {
+      "utterance": "hey buddy",
+      "expected_intent": "greet",
+      "predicted_intent": "greet",
+      "confidence": 0.457,
+      "correct": true
+    },
+    {
+      "utterance": "good evening",
+      "expected_intent": "greet",
+      "predicted_intent": "greet",
+      "confidence": 0.6733,
+      "correct": true
+    },
+    {
+      "utterance": "namaste bot",
+      "expected_intent": "greet",
+      "predicted_intent": "greet",
+      "confidence": 0.7167,
+      "correct": true
+    },
+    {
+      "utterance": "check this customer feedback",
+      "expected_intent": "analyze_text",
+      "predicted_intent": "analyze_text",
+      "confidence": 0.7703,
+      "correct": true
+    },
+    {
+      "utterance": "can you test this review",
+      "expected_intent": "analyze_text",
+      "predicted_intent": "analyze_text",
+      "confidence": 0.6676,
+      "correct": true
+    },
+    {
+      "utterance": "classify sentiment for this text",
+      "expected_intent": "analyze_text",
+      "predicted_intent": "analyze_text",
+      "confidence": 0.6253,
+      "correct": true
+    },
+    {
+      "utterance": "how does this feedback score",
+      "expected_intent": "analyze_text",
+      "predicted_intent": "limitations",
+      "confidence": 0.2337,
+      "correct": false
+    },
+    {
+      "utterance": "why did you give this prediction",
+      "expected_intent": "explain_last",
+      "predicted_intent": "explain_last",
+      "confidence": 0.6584,
+      "correct": true
+    },
+    {
+      "utterance": "explain the score",
+      "expected_intent": "explain_last",
+      "predicted_intent": "explain_last",
+      "confidence": 0.5302,
+      "correct": true
+    },
+    {
+      "utterance": "why is it marked positive",
+      "expected_intent": "explain_last",
+      "predicted_intent": "explain_last",
+      "confidence": 0.5351,
+      "correct": true
+    },
+    {
+      "utterance": "what words influenced the decision",
+      "expected_intent": "explain_last",
+      "predicted_intent": "explain_last",
+      "confidence": 0.3332,
+      "correct": true
+    },
+    {
+      "utterance": "which brands did you detect",
+      "expected_intent": "show_entities",
+      "predicted_intent": "show_entities",
+      "confidence": 0.2812,
+      "correct": true
+    },
+    {
+      "utterance": "what products or companies are named",
+      "expected_intent": "show_entities",
+      "predicted_intent": "show_entities",
+      "confidence": 0.66,
+      "correct": true
+    },
+    {
+      "utterance": "show me recognized locations",
+      "expected_intent": "show_entities",
+      "predicted_intent": "show_entities",
+      "confidence": 0.3774,
+      "correct": true
+    },
+    {
+      "utterance": "list entities in the text",
+      "expected_intent": "show_entities",
+      "predicted_intent": "show_entities",
+      "confidence": 0.5468,
+      "correct": true
+    },
+    {
+      "utterance": "why is there a caution badge",
+      "expected_intent": "why_review_flag",
+      "predicted_intent": "why_review_flag",
+      "confidence": 0.7266,
+      "correct": true
+    },
+    {
+      "utterance": "why was it flagged for human review",
+      "expected_intent": "why_review_flag",
+      "predicted_intent": "why_review_flag",
+      "confidence": 0.8314,
+      "correct": true
+    },
+    {
+      "utterance": "what does review required mean",
+      "expected_intent": "why_review_flag",
+      "predicted_intent": "why_review_flag",
+      "confidence": 0.3907,
+      "correct": true
+    },
+    {
+      "utterance": "why was the confidence score low",
+      "expected_intent": "why_review_flag",
+      "predicted_intent": "why_review_flag",
+      "confidence": 0.5362,
+      "correct": true
+    },
+    {
+      "utterance": "did you audit for religion bias",
+      "expected_intent": "bias_info",
+      "predicted_intent": "bias_info",
+      "confidence": 0.5758,
+      "correct": true
+    },
+    {
+      "utterance": "how fair is this model across genders",
+      "expected_intent": "bias_info",
+      "predicted_intent": "bias_info",
+      "confidence": 0.6986,
+      "correct": true
+    },
+    {
+      "utterance": "tell me about the bias testing",
+      "expected_intent": "bias_info",
+      "predicted_intent": "bias_info",
+      "confidence": 0.5428,
+      "correct": true
+    },
+    {
+      "utterance": "is there demographic disparity",
+      "expected_intent": "bias_info",
+      "predicted_intent": "why_review_flag",
+      "confidence": 0.2105,
+      "correct": false
+    },
+    {
+      "utterance": "is my review data stored on disk",
+      "expected_intent": "privacy",
+      "predicted_intent": "privacy",
+      "confidence": 0.8059,
+      "correct": true
+    },
+    {
+      "utterance": "what is the privacy policy",
+      "expected_intent": "privacy",
+      "predicted_intent": "privacy",
+      "confidence": 0.433,
+      "correct": true
+    },
+    {
+      "utterance": "do you keep user logs",
+      "expected_intent": "privacy",
+      "predicted_intent": "privacy",
+      "confidence": 0.4564,
+      "correct": true
+    },
+    {
+      "utterance": "where do you send my data",
+      "expected_intent": "privacy",
+      "predicted_intent": "privacy",
+      "confidence": 0.8228,
+      "correct": true
+    },
+    {
+      "utterance": "can you understand sarcasm",
+      "expected_intent": "limitations",
+      "predicted_intent": "help",
+      "confidence": 0.2159,
+      "correct": false
+    },
+    {
+      "utterance": "what are the failure modes",
+      "expected_intent": "limitations",
+      "predicted_intent": "limitations",
+      "confidence": 0.5085,
+      "correct": true
+    },
+    {
+      "utterance": "where does the system perform poorly",
+      "expected_intent": "limitations",
+      "predicted_intent": "limitations",
+      "confidence": 0.4656,
+      "correct": true
+    },
+    {
+      "utterance": "what weaknesses exist in translation",
+      "expected_intent": "limitations",
+      "predicted_intent": "limitations",
+      "confidence": 0.2035,
+      "correct": true
+    },
+    {
+      "utterance": "how do I use VaaniBot",
+      "expected_intent": "help",
+      "predicted_intent": "help",
+      "confidence": 0.3548,
+      "correct": true
+    },
+    {
+      "utterance": "show me the menu of options",
+      "expected_intent": "help",
+      "predicted_intent": "help",
+      "confidence": 0.3186,
+      "correct": true
+    },
+    {
+      "utterance": "what can you assist me with",
+      "expected_intent": "help",
+      "predicted_intent": "help",
+      "confidence": 0.5824,
+      "correct": true
+    },
+    {
+      "utterance": "help me please",
+      "expected_intent": "help",
+      "predicted_intent": "help",
+      "confidence": 0.5689,
+      "correct": true
+    },
+    {
+      "utterance": "bye bye",
+      "expected_intent": "bye",
+      "predicted_intent": "bye",
+      "confidence": 0.7976,
+      "correct": true
+    },
+    {
+      "utterance": "see ya",
+      "expected_intent": "bye",
+      "predicted_intent": "bye",
+      "confidence": 0.3601,
+      "correct": true
+    },
+    {
+      "utterance": "have a good day",
+      "expected_intent": "bye",
+      "predicted_intent": "greet",
+      "confidence": 0.6733,
+      "correct": false
+    },
+    {
+      "utterance": "farewell bot",
+      "expected_intent": "bye",
+      "predicted_intent": "bye",
+      "confidence": 0.4782,
+      "correct": true
+    },
+    {
+      "utterance": "supercalifragilisticexpialidocious",
+      "expected_intent": "fallback",
+      "predicted_intent": "fallback",
+      "confidence": 0.1221,
+      "correct": true
+    },
+    {
+      "utterance": "qwertyuiopasdfghjkl",
+      "expected_intent": "fallback",
+      "predicted_intent": "fallback",
+      "confidence": 0.1221,
+      "correct": true
+    },
+    {
+      "utterance": "zzzzzzzz12345",
+      "expected_intent": "fallback",
+      "predicted_intent": "fallback",
+      "confidence": 0.1221,
+      "correct": true
+    },
+    {
+      "utterance": "quantum flux capacitor waffle",
+      "expected_intent": "fallback",
+      "predicted_intent": "fallback",
+      "confidence": 0.3315,
+      "correct": true
+    }
+  ]
+}

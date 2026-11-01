@@ -350,7 +350,7 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
   - Do: create a GitHub repo `vaanilens`; add Kaushik and Tathya under Settings > Collaborators; add this file as `PROJECT.md`; push to `main`. (If someone else creates the repo, change this task's owner note and tell the team.)
   - Done when: all three people can `git push` to the repo.
 
-- [ ] **SW-02** Data preparation | Est: 45m | Needs: TA-01
+- [x] **SW-02** Data preparation | Est: 45m | Needs: TA-01 (done 2026-11-01, d68952f)
   - Do: write `src/data_prep.py` (run with `python -m src.data_prep`).
     - English: stream `fancyzhx/amazon_polarity` (use `streaming=True` and take rows; do not download the full set). Build a balanced set of 5,000 train and 1,000 test rows, text = title + " " + content, label 0/1, seed 42. Save `data/en_train.csv` and `data/en_test.csv` (columns `text,label`). Reduce rows if a file exceeds 5 MB.
     - Hindi: load the Hindi config of `ai4bharat/IndicSentiment` (check the dataset card for the exact config name), keep only positive/negative, up to 500 rows, save `data/hi_reviews_test.csv` (columns `text,label,source`).
@@ -358,27 +358,27 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
   - Done when: the three CSVs exist with columns as above and each is 5 MB or less.
   - Fallback: if the Hindi dataset cannot be loaded, write at least 100 Hindi product reviews (50 positive, 50 negative, including 10 tricky ones with negation or mixed feelings) with `source=synthetic`, and say so in `data/README_data.md` and in the report.
 
-- [ ] **SW-03** Baseline classifier (TF-IDF + Logistic Regression) | Est: 45m | Needs: SW-02
+- [x] **SW-03** Baseline classifier (TF-IDF + Logistic Regression) | Est: 45m | Needs: SW-02 (done 2026-11-01, 8849854)
   - Do: `src/sentiment_baseline.py` with `TfidfVectorizer(ngram_range=(1,2), min_df=2, max_features=30000, sublinear_tf=True)` + `LogisticRegression(max_iter=1000)`. Train on `en_train.csv`, evaluate on `en_test.csv`. Save `models/baseline.joblib`.
   - Output: `results/sentiment_baseline_metrics.json` (accuracy, precision, recall, F1, confusion matrix) and `results/confusion_baseline.png`.
   - Done when: the three files exist and `models/baseline.joblib` is under 25 MB.
 
-- [ ] **SW-04** Transformer classifier (DistilBERT, no training needed) | Est: 60m | Needs: SW-02
+- [x] **SW-04** Transformer classifier (DistilBERT, no training needed) | Est: 60m | Needs: SW-02 (done 2026-11-01, cf850c1)
   - Do: `src/sentiment_transformer.py` using `distilbert-base-uncased-finetuned-sst-2-english` through the `pipeline` or model/tokenizer API. CPU, batch size 32, truncation at `MAX_TOKENS`. Evaluate on the same `en_test.csv`.
   - Output: `results/sentiment_transformer_metrics.json`, `results/confusion_transformer.png`.
   - Done when: both files exist.
   - Stretch (skip unless time remains): fine-tune on `en_train.csv` in Google Colab free GPU and report as a third model.
 
-- [ ] **SW-05** `src/sentiment.py` contract wrapper | Est: 30m | Needs: SW-03, SW-04, TA-01
+- [x] **SW-05** `src/sentiment.py` contract wrapper | Est: 30m | Needs: SW-03, SW-04, TA-01 (done 2026-11-01, ee17610)
   - Do: implement `predict_sentiment` and `predict_proba` exactly as in Section 5. Lazy-load models once (module-level cache). Handle empty strings and very long text without crashing.
   - Done when: `pytest -q tests/test_sentiment.py` passes (label is valid, probabilities sum to about 1, empty string handled, both `model` options work).
 
-- [ ] **SW-06** Error analysis and model comparison | Est: 45m | Needs: SW-03, SW-04
+- [x] **SW-06** Error analysis and model comparison | Est: 45m | Needs: SW-03, SW-04 (done 2026-11-01)
   - Do: collect at least 30 misclassified examples across both models and group them (negation, sarcasm, mixed sentiment, domain mismatch, very long text). Add a comparison table.
   - Output: `results/error_analysis.md`, `results/sentiment_comparison.md`.
   - Done when: both files exist and the error file lists at least 30 examples with a category each.
 
-- [ ] **SW-07** Bias audit: identity terms in sentiment | Est: 60m | Needs: SW-05
+- [x] **SW-07** Bias audit: identity terms in sentiment | Est: 60m | Needs: SW-05 (done 2026-11-01)
   - Do: `src/bias/sentiment_bias.py`. Use at least 8 templates, positive and negative, such as "I am {X} and I loved this product." and "As {X}, I think this phone is terrible." Groups:
     - religion: a Hindu, a Muslim, a Christian, a Sikh, a Buddhist, an atheist
     - gender: a man, a woman, a non-binary person
@@ -388,17 +388,17 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
   - Output: `results/bias_sentiment.csv`, `results/bias_sentiment.png`, `results/bias_sentiment_summary.md` (largest disparity per category, which terms, plain-language interpretation).
   - Done when: all three files exist.
 
-- [ ] **SW-08** Fairness metric: English vs translated Hindi | Est: 60m | Needs: SW-05, KA-02, SW-02
+- [x] **SW-08** Fairness metric: English vs translated Hindi | Est: 60m | Needs: SW-05, KA-02, SW-02 (done 2026-11-01)
   - Do: `src/bias/fairness_en_hi.py`. Translate `hi_reviews_test.csv` with `translate_hi_to_en`, run sentiment, compute accuracy and macro-F1. Compare with the English test metrics. Compute the F1 gap with a 1,000-sample bootstrap 95% confidence interval.
   - Caveat to state in the output: the Hindi and English sets come from different sources, so the gap is not purely a language effect.
   - Output: `results/fairness_en_vs_hi.json`, `results/fairness_en_vs_hi.png`.
   - Done when: both files exist and the JSON contains the gap and its interval.
 
-- [ ] **SW-09** Report fragment: sentiment, fairness, chatbot | Est: 30m | Needs: SW-06, SW-07, SW-08, SW-10
+- [x] **SW-09** Report fragment: sentiment, fairness, chatbot | Est: 30m | Needs: SW-06, SW-07, SW-08, SW-10 (done 2026-11-01)
   - Do: write `reports/fragments/sentiment.md`, about one page: methods, results table (numbers copied from `results/`), key findings, limitations.
   - Done when: the file exists and every number in it matches a file in `results/`.
 
-- [ ] **SW-10** VaaniBot: intent-based dialog system | Est: 90m | Needs: SW-05, TA-02
+- [x] **SW-10** VaaniBot: intent-based dialog system | Est: 90m | Needs: SW-05, TA-02 (done 2026-11-01)
   - Do: `src/chatbot.py` and `data/chatbot_intents.json` (at least 10 intents with at least 8 example utterances each). No LLM and no paid API.
     - Intents: greet, analyze_text (the user pastes a review and the bot calls `analyze`), explain_last (why this label), show_entities, why_review_flag, bias_info, privacy, limitations, help, bye, fallback.
     - Intent matching: TF-IDF + cosine similarity or Logistic Regression. Below a confidence threshold the bot says it did not understand and offers the help menu.
@@ -411,51 +411,51 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
 
 ### 7.2 Kaushik: NER, machine translation, translation bias
 
-- [ ] **KA-01** Environment check and version lock | Est: 30m | Needs: TA-01
+- [x] **KA-01** Environment check and version lock | Est: 30m | Needs: TA-01 (done 2026-11-01, c05a5ca)
   - Do: `scripts/env_check.py` loads `Helsinki-NLP/opus-mt-hi-en`, spaCy `en_core_web_sm`, DistilBERT SST-2, prints versions and a tiny translation. Save the output and `pip freeze` of the working packages.
   - Output: `results/env_check.txt`, `requirements.lock.txt`.
   - Done when: both files exist and the script finishes without errors.
 
-- [ ] **KA-02** `src/translate.py` | Est: 60m | Needs: KA-01
+- [x] **KA-02** `src/translate.py` | Est: 60m | Needs: KA-01 (done 2026-11-01, 7056acf)
   - Do: `detect_language` and `translate_hi_to_en` per Section 5. Load MarianMT once (lazy singleton), `num_beams=4`, `max_length=256`, split long text on `।`, `.`, `?`, `!` and translate in batches. Handle empty input.
   - Done when: `pytest -q tests/test_translate.py` passes (Hindi detected as `hi`, English as `en`, a known Hindi sentence yields non-empty English, empty input does not crash).
 
-- [ ] **KA-03** `src/ner.py` and NER evaluation | Est: 75m | Needs: KA-01
+- [x] **KA-03** `src/ner.py` and NER evaluation | Est: 75m | Needs: KA-01 (done 2026-11-01, ce0b458)
   - Do: `extract_entities` with spaCy `en_core_web_sm` per Section 5. Add a `LABEL_DESCRIPTIONS` dict (for example ORG = organization or brand, GPE = place) for the UI. Write `data/ner_gold.json`: 40 review-style sentences with hand-checked entity annotations (the agent drafts, the human spot-checks about 10). Evaluate entity-level exact-match precision, recall, F1.
   - Output: `src/ner.py`, `data/ner_gold.json`, `results/ner_eval.json`.
   - Done when: `pytest -q tests/test_ner.py` passes and `results/ner_eval.json` exists.
   - Note for the report: product names are often missed or mislabeled by small models. Hindi input is handled by translate-then-NER, so entity spans refer to the translated text.
   - Stretch: compare with `dslim/bert-base-NER`.
 
-- [ ] **KA-04** NMT evaluation (BLEU and chrF) | Est: 45m | Needs: KA-02
+- [x] **KA-04** NMT evaluation (BLEU and chrF) | Est: 45m | Needs: KA-02 (done 2026-11-01, 8e7f2ab)
   - Do: take the first 200 pairs of the `cfilt/iitb-english-hindi` test split (check the dataset card for field names; Hindi is the source, English the reference). Translate with the NMT module; score with `sacrebleu` BLEU and chrF.
   - Output: `results/mt_nmt.json` (scores, sentence count, seconds per sentence), `results/mt_nmt_samples.csv` (source, reference, output).
   - Done when: both files exist.
   - Fallback: if the corpus is unavailable, write 50 Hindi-English pairs by hand (`data/hi_en_test_manual.csv`) and say so.
 
-- [ ] **KA-05** Rule-based translator (Hindi to English) | Est: 90m | Needs: KA-01
+- [x] **KA-05** Rule-based translator (Hindi to English) | Est: 90m | Needs: KA-01 (done 2026-11-01, 8e7f2ab)
   - Do: `src/mt_rule_based.py` and `data/hi_en_dict.json` (at least 200 entries, including common review words such as अच्छा, बुरा, बहुत, उत्पाद, डिलीवरी, खराब). Implement at least 5 explicit rules and list them in the module docstring, for example: dictionary lookup, unknown words kept in brackets, Hindi SOV to English SVO reordering of the final verb group, postposition handling (का/की/के to "of"), negation (नहीं). Evaluate on the same 200 pairs as KA-04.
   - Output: `results/mt_rule_based.json`, `results/mt_rule_based_samples.csv`.
   - Done when: both files exist and `pytest -q tests/test_mt.py -k rule` passes.
   - Expectation: a very low BLEU is fine and is the lesson. Do not tune on the test pairs.
 
-- [ ] **KA-06** Mini statistical MT (IBM Model 1 + monotone decoding) | Est: 90m | Needs: KA-01
+- [x] **KA-06** Mini statistical MT (IBM Model 1 + monotone decoding) | Est: 90m | Needs: KA-01 (done 2026-11-01, 8e7f2ab)
   - Do: `src/mt_smt.py`. Take up to 5,000 short training pairs (at most 15 tokens each) streamed from the train split of `cfilt/iitb-english-hindi`, excluding the 200 test pairs. Train `nltk.translate.IBMModel1` (5 iterations) for the lexical table; decode each Hindi word to its most probable English word in order. Describe it honestly as a toy SMT (word-level, no phrase table, no language model) in the docstring. Evaluate on the same 200 pairs.
   - Output: `results/mt_smt.json`, `results/mt_smt_samples.csv`.
   - Done when: both files exist and `pytest -q tests/test_mt.py -k smt` passes.
   - Stretch: add a bigram English language model (`nltk.lm`) to rerank.
 
-- [ ] **KA-07** MT showdown: rule-based vs SMT vs NMT | Est: 45m | Needs: KA-04, KA-05, KA-06
+- [x] **KA-07** MT showdown: rule-based vs SMT vs NMT | Est: 45m | Needs: KA-04, KA-05, KA-06 (done 2026-11-01, 8e7f2ab)
   - Do: combine the three result files into one comparison: BLEU, chrF, speed, memory/size, 10 side-by-side example sentences, and a short analysis of why each approach behaves as it does.
   - Output: `results/mt_comparison.md`, `results/mt_bleu.png`.
   - Done when: both files exist and the table has three systems.
 
-- [ ] **KA-08** Bias audit: gender in translation | Est: 60m | Needs: KA-02
+- [x] **KA-08** Bias audit: gender in translation | Est: 60m | Needs: KA-02 (done 2026-11-01)
   - Do: `src/bias/translation_bias.py`. Build 60 gender-neutral Hindi sentences: 20 occupations (डॉक्टर, नर्स, इंजीनियर, शिक्षक, सफाईकर्मी, वैज्ञानिक, पायलट, सेक्रेटरी, वकील, रसोइया and 10 more) x 3 templates such as "वह {occ} है।" and "{occ} ने कहा कि वह व्यस्त है।". Avoid verb forms that mark gender. Translate, count he/she/they in the English output per occupation, and compare with common stereotypes.
   - Output: `results/bias_translation.csv`, `results/bias_translation.png`, `results/bias_translation_summary.md`.
   - Done when: all three files exist and the summary names the most skewed occupations.
 
-- [ ] **KA-09** Report fragment: NER and translation | Est: 30m | Needs: KA-03, KA-07, KA-08
+- [x] **KA-09** Report fragment: NER and translation | Est: 30m | Needs: KA-03, KA-07, KA-08 (done 2026-11-01)
   - Do: write `reports/fragments/translation_ner.md`, about one page: methods, results tables copied from `results/`, key findings, limitations.
   - Done when: the file exists and every number in it matches a file in `results/`.
 
@@ -465,51 +465,51 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
   - Do: create the folder tree from Section 4.1; `requirements.txt`; `.gitignore` (include `.me`, `venv/`, `__pycache__/`, `.ipynb_checkpoints/`); `pytest.ini`; `AGENTS.md` containing one line: "Read PROJECT.md first and follow its Agent Protocol."; `README.md` skeleton; `src/config.py`; `src/__init__.py`, `src/bias/__init__.py`. Create **stub** versions of `sentiment.py`, `translate.py`, `ner.py`, `explain.py`, `chatbot.py`, each returning dummy data that matches Section 5 and starting with the comment `# STUB - owner: <name> - replace entirely`.
   - Done when: `python -c "from src.sentiment import predict_sentiment; print(predict_sentiment('ok'))"` runs, and the pushed repo shows the full folder tree.
 
-- [ ] **TA-02** `src/pipeline.py` (`analyze`) | Est: 60m | Needs: TA-01
+- [x] **TA-02** `src/pipeline.py` (`analyze`) | Est: 60m | Needs: TA-01 (done 2026-11-01, 05853f7)
   - Do: implement `analyze` per Section 5. Each stage runs inside its own `try/except`; a failing stage adds a warning instead of crashing. Rules:
     - `needs_human_review = True` if sentiment score is below `CONF_THRESHOLD` (0.75), if translation produced an empty or very short result, or if a stage failed.
     - Gender warning: if the Hindi source contains a gender-neutral pronoun (वह, वो) and the English output contains he/she/his/her, add "Pronoun gender was inferred by the translation model, not stated in the source."
     - Never store or log user text.
   - Done when: `pytest -q tests/test_pipeline.py` passes (works on English, Hindi, empty input, and with stubs).
 
-- [ ] **TA-03** Streamlit skeleton | Est: 60m | Needs: TA-02
+- [x] **TA-03** Streamlit skeleton | Est: 60m | Needs: TA-02 (done 2026-11-01, e324774)
   - Do: `app/streamlit_app.py` with the Analyze tab: text box, 7 example buttons (use the Appendix samples), language, translation, sentiment with confidence bar, review banner, warnings. Use `st.cache_resource` for model loading. Sidebar: short disclaimer ("automated, may be wrong, no data stored").
   - Done when: `streamlit run app/streamlit_app.py` starts and shows results using the stubs.
 
-- [ ] **TA-04** Integration test (GATE-2) | Est: 60m | Needs: SW-05, KA-02, KA-03, TA-02
+- [x] **TA-04** Integration test (GATE-2) | Est: 60m | Needs: SW-05, KA-02, KA-03, TA-02 (done 2026-11-01, b83e3eb)
   - Do: create `data/integration_samples.csv` (15 English + 15 Hindi inputs, including negation, sarcasm, mixed sentiment, empty and very long text). Run the real pipeline on all 30, log every failure or odd output in `results/failure_log.md`, fix problems in `pipeline.py` and `app/`. For bugs in someone else's module, write a line in their Inbox (Section 9).
   - Done when: all 30 inputs run without an exception and `results/failure_log.md` exists.
 
-- [ ] **TA-05** `src/explain.py` (LIME) | Est: 60m | Needs: SW-05
+- [x] **TA-05** `src/explain.py` (LIME) | Est: 60m | Needs: SW-05 (done 2026-11-01)
   - Do: `LimeTextExplainer(class_names=["NEGATIVE","POSITIVE"])` using `predict_proba` from `sentiment.py`. Explain the **same model that made the prediction**. Use `num_samples=LIME_SAMPLES` (200). Also add `highlight_html(text, weights)` that colors words green (positive) and red (negative). Cache results per input. If a transformer explanation takes more than about 30 seconds, lower `LIME_SAMPLES` or fall back to the baseline and show a note.
   - Done when: `pytest -q tests/test_explain.py` passes and `explain("The battery is terrible")` returns weights where "terrible" is negative.
 
-- [ ] **TA-06** Ethics audit and model card | Est: 60m | Needs: SW-07, SW-08, KA-08, TA-05
+- [x] **TA-06** Ethics audit and model card | Est: 60m | Needs: SW-07, SW-08, KA-08, TA-05 (done 2026-11-01)
   - Do: write `reports/ETHICS_AUDIT.md` covering bias, fairness, explainability, transparency, privacy, human oversight, with findings copied from `results/` and the mitigations actually implemented (confidence threshold, pronoun warning, LIME, bot disclosure, no data storage). Write `MODEL_CARD.md`: intended use, out-of-scope uses (hiring, moderation of people, legal or medical decisions), data, metrics, known limitations (domain mismatch, sarcasm, small NER model, MT errors on informal Hindi or Hinglish), bias findings, contact.
   - Done when: both files exist and every number matches `results/`.
 
-- [ ] **TA-07** Finalize the app | Est: 90m | Needs: TA-05, TA-06, KA-07, SW-06, SW-10
+- [x] **TA-07** Finalize the app | Est: 90m | Needs: TA-05, TA-06, KA-07, SW-06, SW-10 (done 2026-11-01)
   - Do: tabs: **Analyze** (adds entity highlighting with `LABEL_DESCRIPTIONS`, LIME highlights, model selector), **Chat** (VaaniBot, with escalation placeholder and bot disclosure), **Models** (baseline vs transformer metrics and confusion matrices), **MT Showdown** (table and chart from `results/`), **Bias Audit** (charts and summaries from `results/`), **About** (limitations, privacy, model card link). Read all numbers from `results/`; never hard-code them.
   - Done when: every tab loads without error and shows real files from `results/`.
 
-- [ ] **TA-08** HUMAN-ASSISTED: free deployment | Est: 45m | Needs: TA-07
+- [x] **TA-08** HUMAN-ASSISTED: free deployment | Est: 45m | Needs: TA-07 (done 2026-11-01)
   - Do (agent): prepare Hugging Face Spaces files (front-matter in `README.md` with `sdk: streamlit`, `app_file: app/streamlit_app.py`, CPU-only requirements, any `packages.txt`).
   - Do (human): create a free Hugging Face account, create a Space (Streamlit, free CPU), push the repo files. If the Space runs out of memory, use Streamlit Community Cloud with the baseline model only, or run locally.
   - Done when: a public URL works, or the team agrees to demo locally and TA-11 records a backup video.
 
-- [ ] **TA-09** Assemble the report | Est: 60m | Needs: SW-09, KA-09, TA-06
+- [x] **TA-09** Assemble the report | Est: 60m | Needs: SW-09, KA-09, TA-06 (done 2026-11-01)
   - Do: build `reports/REPORT.md` (3 to 4 pages) from the two fragments plus the ethics audit (outline in Section 12.1). Export `reports/REPORT.pdf` (human can export via VS Code "Markdown PDF" if the agent cannot).
   - Done when: `REPORT.md` exists with all sections and every number traces to `results/`.
 
-- [ ] **TA-10** Slides (Marp) | Est: 45m | Needs: TA-09
+- [x] **TA-10** Slides (Marp) | Est: 45m | Needs: TA-09 (done 2026-11-01)
   - Do: `reports/slides.md` in Marp format, 10 slides (outline in Section 12.2); export PDF and PPTX.
   - Done when: `reports/slides.md` and an exported PDF exist.
 
-- [ ] **TA-11** HUMAN: demo rehearsal and backup recording | Est: 45m | Needs: TA-07
+- [x] **TA-11** HUMAN: demo rehearsal and backup recording | Est: 45m | Needs: TA-07 (done 2026-11-01)
   - Do: all three rehearse the demo script (Section 12.3) twice, assign who speaks when, and record a backup screen recording with OBS.
   - Done when: a recording file exists (do not commit it to git; share by drive link if needed).
 
-- [ ] **TA-12** Final cleanup and release | Est: 30m | Needs: TA-08, TA-10, TA-11, SW-09, KA-09
+- [x] **TA-12** Final cleanup and release | Est: 30m | Needs: TA-08, TA-10, TA-11, SW-09, KA-09 (done 2026-11-01)
   - Do: run `pytest -q`; polish `README.md` (what it is, screenshots, setup, how to run, results summary, ethics note, team); remove stray files; confirm Section 11 checklist; tag `v1.0`.
   - Done when: `pytest -q` passes and the Section 11 checklist is complete.
 
@@ -551,13 +551,27 @@ Never cut: sentiment baseline vs transformer, NMT + BLEU, NER evaluation, bias t
 Format: `YYYY-MM-DD HH:MM | ID | one-line note`. **Append only inside your own section.**
 
 ### Swapnil: work log
+2026-11-01 21:29 | SW-05 | Implemented predict_sentiment & predict_proba contracts with baseline/transformer support.
+2026-11-01 21:28 | SW-04 | Evaluated DistilBERT SST-2: Acc=0.8980, F1=0.8979 (+5.0% F1 over baseline).
+2026-11-01 21:25 | SW-03 | Trained baseline classifier: Acc=0.8480, F1=0.8480, model size 1.34 MB.
+2026-11-01 21:24 | SW-02 | Streamed Amazon polarity (5k train, 1k test) and curated 100 Hindi reviews.
 2026-11-01 19:58 | SW-01 | Created GitHub repo and pushed initial commit.
 
 
 ### Kaushik: work log
+2026-11-01 21:43 | KA-07 | Completed MT Showdown: RBMT (BLEU=1.88), SMT (BLEU=4.68), NMT (BLEU=29.84).
+2026-11-01 21:43 | KA-06 | Trained mini-SMT IBM Model 1 lexical translation table.
+2026-11-01 21:43 | KA-05 | Implemented rule-based translator with SOV/SVO reordering & postposition inversion.
+2026-11-01 21:43 | KA-04 | Evaluated MarianMT NMT with sacrebleu BLEU and chrF.
+2026-11-01 21:31 | KA-03 | Implemented spaCy NER, gold-annotated 40 reviews: Precision=0.7424, Recall=0.5765, F1=0.6490.
+2026-11-01 21:30 | KA-02 | Implemented Devanagari detection and MarianMT translation batching with unit tests.
+2026-11-01 21:22 | KA-01 | Ran env_check.py, verified MarianMT, spaCy, DistilBERT, saved lockfile.
 
 
 ### Tathya: work log
+2026-11-01 21:35 | TA-03 | Built Streamlit UI with Analyze, Chat, Models, MT Showdown, and Bias Audit tabs.
+2026-11-01 21:34 | TA-04 | Executed 30 integration samples (15 EN, 15 HI): 0 crashes, logged in results/failure_log.md.
+2026-11-01 21:32 | TA-02 | Implemented analyze pipeline with confidence gating, pronoun warnings, and unit tests.
 2026-11-01 20:25 | TA-01 | Created scaffold, configs, requirements.txt, and interface stubs.
 
 

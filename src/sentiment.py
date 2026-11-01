@@ -6,6 +6,10 @@ Implements:
 Lazy-loads models and handles empty / very long texts robustly.
 """
 
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 from pathlib import Path
 from typing import List, Dict
 import numpy as np

@@ -5,6 +5,10 @@ Provides:
 - translate_hi_to_en(text): MarianMT (Helsinki-NLP/opus-mt-hi-en) translation with batching.
 """
 
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 import re
 from typing import Optional
 

@@ -1,0 +1,282 @@
+[
+  {
+    "idx": 2,
+    "text": "TWO DIFFERENT VERSIONS OF THE SAME SOUNDTRACK Triplets of Belleville soundtrack and Belleville Rendevous are the same di",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 62
+  },
+  {
+    "idx": 8,
+    "text": "Smooth Feel but costly I loved the product, but when I went back to get another bottle, I discovered it had nearly doubl",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 30
+  },
+  {
+    "idx": 14,
+    "text": "Not worth the $2.99 I bought these for use on my ipod earbuds. I had an old pair (they were green) that worked great, bu",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 71
+  },
+  {
+    "idx": 15,
+    "text": "Utopian fantasy Hogan is a member of that group of sci-fi writers who present bold ideas but don't particularly write we",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 142
+  },
+  {
+    "idx": 16,
+    "text": "It really helped me I had very bad hoarseness from acid reflux. Prescription medicine wasn't helping. My doctor advised ",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 124
+  },
+  {
+    "idx": 18,
+    "text": "Cute but typical So-so at it's best. Great scenery. Good-looking men, but so typically \"chick-flick\" despite the true st",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "POSITIVE",
+    "len": 126
+  },
+  {
+    "idx": 29,
+    "text": "Regular 'ol Charger Plain old charger that comes with the sd870is that I forgot the charger for when I went home for Chr",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 101
+  },
+  {
+    "idx": 36,
+    "text": "People... The Plug-In PET is not coming to America. The season of NT Warrior is already over, Axess is airing now. They ",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 94
+  },
+  {
+    "idx": 43,
+    "text": "RE: Wipeout originally by Surfaris Google the instrumental Wipeout , and you will read the real story. I love the Surfar",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "POSITIVE",
+    "len": 35
+  },
+  {
+    "idx": 44,
+    "text": "How is this supposed to work? I got these for my jawbone headset. Many had said they work great. but for the life of me ",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 63
+  },
+  {
+    "idx": 45,
+    "text": "Movie is awesome. Service comperable to Wal-Mart I already know that I will love the movie. The problem is, shpping is a",
+    "true": "NEGATIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 51
+  },
+  {
+    "idx": 47,
+    "text": "BALLISTIC BOMB This tedious and unnecessary remake of the 1975 James Caan classic has little to recommend it. Director J",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 150
+  },
+  {
+    "idx": 48,
+    "text": "Green Tea Well, it arrived on time and in OK condition, but after almost a month of taking it, I haven't noticed any cha",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 30
+  },
+  {
+    "idx": 49,
+    "text": "These are not the answer to Jawbone Noise Asason While Jawbone make a great blue tooth ear bud, it doesn't interface wit",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 61
+  },
+  {
+    "idx": 52,
+    "text": "Exactly as described, 15 feet of stereo 3.5mm headphone cable Works as described, no distortion issues. I use this in my",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 34
+  },
+  {
+    "idx": 55,
+    "text": "Just Like New Saved alot of money. Looks brand spank'n new and works like a charm.I have purchased two other remanufactu",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 41
+  },
+  {
+    "idx": 56,
+    "text": "could have done without the \"laugh\" very informative, content was well structured, though the instructor is a self-decla",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 73
+  },
+  {
+    "idx": 59,
+    "text": "MY SOON TO BE NEW TOY I Cant wait till christmas then i will get my advace pet i seen what it could do so i cant wait.he",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 70
+  },
+  {
+    "idx": 62,
+    "text": "Alternate History meets Classic Horror Kim Newman's gothic horror novel, \"Anno Dracula\" is a fine riff of Bram Stoker's ",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 155
+  },
+  {
+    "idx": 68,
+    "text": "Not Happy I recently purchased a used 8 GB View. It works well as a 8 GB View but will not support an 32 GB SD card. The",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 41
+  },
+  {
+    "idx": 74,
+    "text": "DELL E207WFP 20.1\" Digital/Analog TFT Flat Panel Monitor Just a grea product from Dell! I never regret purchasing this l",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 133
+  },
+  {
+    "idx": 76,
+    "text": "VHS tape of Vital signs Fun movie, but the tape quality listed as \"NEW\" has faded colors- VHS tapes just don't hold up. ",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 31
+  },
+  {
+    "idx": 82,
+    "text": "I'm going nuts! PPLLEEAASSEE HURRY UP! I read this book when I was in grade 5, am now in grade 8 and have read it 5 time",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 60
+  },
+  {
+    "idx": 83,
+    "text": "Nobody would believe this in a novel...only true crime!! It is hard to imagine how the three characters in this triangle",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 57
+  },
+  {
+    "idx": 86,
+    "text": "very exiting series I read those books, few years back and i'm still thinking about them, i would love to have another b",
+    "true": "POSITIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 40
+  },
+  {
+    "idx": 89,
+    "text": "Close to Parallels If you like the Parallels cd, then you will probably like this one too. Inside Out contains songs tha",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 61
+  },
+  {
+    "idx": 90,
+    "text": "Choose Canon brand I wanted a reliable second battery for my camera to take on an extended overseas vacation. I was conc",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 77
+  },
+  {
+    "idx": 102,
+    "text": "Damaged Was starting to swell, which was why I was looking for anotherNo more purchases like this from meVery disappoint",
+    "true": "NEGATIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 32
+  },
+  {
+    "idx": 103,
+    "text": "NON-STOP ACTION...What's NOT to like about this movie? I'm not sure why this movie didn't do well. It has it's faults bu",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 53
+  },
+  {
+    "idx": 115,
+    "text": "Fine for children, boring for adults One has to be a young adult to enjoy this book. If you want to read about children ",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "POSITIVE",
+    "len": 48
+  },
+  {
+    "idx": 130,
+    "text": "Perfect replacement for a lost charger If you happen to misplace the factory charger, this is the exact replacement you ",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 71
+  },
+  {
+    "idx": 134,
+    "text": "Not as good as \"What burns never returns\"... ...but a very good pick anyway! As usual Don Caballero manage to hover mile",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 93
+  },
+  {
+    "idx": 136,
+    "text": "If you read the book, don't watch the movie! I really enjoyed this book, but I was very disappointed by the movie. Rathe",
+    "true": "NEGATIVE",
+    "base_pred": "POSITIVE",
+    "trans_pred": "NEGATIVE",
+    "len": 89
+  },
+  {
+    "idx": 138,
+    "text": "Canon NB-5L Battery for Canon camera I purchased a Canon camera a couple of years ago and a Canon battery came with it. ",
+    "true": "POSITIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 92
+  },
+  {
+    "idx": 153,
+    "text": "Not great, but not bad Firstly, it is incredibly important that you DO NOT use the bundled software for this scanner. Th",
+    "true": "NEGATIVE",
+    "base_pred": "NEGATIVE",
+    "trans_pred": "POSITIVE",
+    "len": 167
+  }
+]
