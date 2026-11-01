@@ -59,3 +59,4 @@ All figures originate from `results/ner_eval.json`:
 1. **High Precision on Standard Entities**: The model accurately identifies well-known geographic entities (GPE: *Patna*, *Bangalore*, *Mumbai*) and prominent corporate organizations (ORG: *Amazon*, *Dell*, *Apple*).
 2. **Product Name Vulnerability**: Small general-domain models frequently miss or misclassify specific product names (e.g. *Redmi Note*, *Kindle Paperwhite*, *Jawbone headset*), often splitting compound trademarks or labeling them as generic nouns.
 3. **Cross-Lingual Pipeline Impact**: Because NER runs on the translated English text, translation inaccuracies in technical terms propagate directly into downstream entity extraction.
+

@@ -141,3 +141,4 @@ VaaniLens follows strict data minimization and privacy-by-design principles:
 - **Zero Persistent Data Retention**: No customer reviews, user identities, or interaction logs are ever written to persistent disk storage or external databases.
 - **Air-Gapped Local Inference**: All models (DistilBERT, MarianMT, spaCy, scikit-learn) execute entirely on local CPU memory.
 - **No Third-Party API Leakage**: No user text is ever transmitted to external commercial LLM APIs (OpenAI, Google, Anthropic).
+

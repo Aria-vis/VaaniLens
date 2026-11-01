@@ -63,3 +63,4 @@ VaaniBot implements an intent-driven dialogue agent with state tracking and sent
 2. **Elevated Demographic Sensitivity in Pretrained Weights**: DistilBERT demonstrated greater demographic sensitivity (religion disparity 0.1129, gender disparity 0.1055) than the baseline, confirming that uncurated web pretraining embeds societal stereotypes that persist post fine-tuning.
 3. **Cross-Lingual Distribution Gap**: The 6.83 percentage point F1 gap between English and translated Hindi reflects a composite of machine translation lexical degradation and the nuanced sarcasm and negation present in colloquial Hindi consumer feedback.
 4. **Safety Architecture**: VaaniLens resolves these limitations through strict human-in-the-loop review gating whenever sentiment confidence falls below 0.75.
+

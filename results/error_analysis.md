@@ -136,3 +136,4 @@ Across 35 analyzed misclassification cases, failures cluster into four primary l
    - For sarcasm and negation errors, LIME visualizes exact token weights. Human reviewers immediately observe if "शानदार" or "great" inappropriately dominated a negative review.
 3. **Cross-Lingual Gender & Postposition Gating**:
    - Translation warnings alert operators whenever MarianMT introduces synthetic pronouns not present in the gender-neutral source text.
+

@@ -120,3 +120,4 @@ Following the standard Model Cards for Model Reporting framework (Mitchell et al
 2. **Translation Gender Warning**: If gender-neutral Hindi pronouns are translated into gendered English pronouns, a prominent warning is attached to the output.
 3. **Data Privacy**: Purely in-memory evaluation; zero logging of user inputs or personal texts to disk.
 4. **Local Execution**: All models run strictly offline on CPU with zero cloud API dependencies.
+

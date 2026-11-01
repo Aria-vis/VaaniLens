@@ -186,3 +186,4 @@ VaaniLens successfully demonstrates that production-grade multilingual review an
 1. **Never Deploy Raw NMT Without Pronoun Gating**: As our audit proves, neural translation systematically invents gender stereotypes from neutral text.
 2. **Enforce Mandatory Confidence Thresholding**: Rejecting automated decisions below 0.75 confidence eliminates over 80% of real-world misclassifications.
 3. **Mandate Local Interpretability (LIME)**: Feature attribution empowers human auditors to catch spurious demographic correlations before harm occurs.
+

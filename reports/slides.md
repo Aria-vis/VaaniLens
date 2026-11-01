@@ -186,3 +186,4 @@ Evaluated on 40 gold-annotated consumer review sentences (`results/ner_eval.json
    - High-accuracy multilingual triage, explainability, and dialog systems can run completely offline on local CPU hardware with 0 API costs.
 
 **Repository**: [github.com/Aria-vis/VaaniLens](https://github.com/Aria-vis/VaaniLens)
+

@@ -59,3 +59,4 @@ All metrics are strictly traceable to `results/sentiment_baseline_metrics.json` 
    - DistilBERT delivers a statistically robust +5.0% F1 gain over the baseline. However, this gain requires a 200x increase in disk storage and a 160x increase in computational latency on CPU.
 3. **Architectural Choice for VaaniLens**:
    - VaaniLens implements a hybrid architecture: DistilBERT serves as the primary inference engine to maximize accuracy on complex customer feedback, while TF-IDF + Logistic Regression is retained as a lightweight fallback and baseline benchmark in the user-facing Streamlit comparison tab.
+

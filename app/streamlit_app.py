@@ -319,3 +319,4 @@ with tab_about:
     - **Kaushik**: Machine Translation (RBMT, SMT, NMT), spaCy NER, Translation Gender Bias Audit.
     - **Tathya**: Pipeline Orchestration, LIME Explainability, Streamlit UI, Ethics Synthesis & Report.
     """)
+

@@ -42,3 +42,4 @@ for filename in files_to_download:
         print(f"Successfully saved {dest} ({dest.stat().st_size} bytes).")
 
 print("All MarianMT files downloaded successfully!")
+
