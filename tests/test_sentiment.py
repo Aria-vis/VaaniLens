@@ -39,3 +39,4 @@ def test_predict_proba_shape_and_sum():
     # Check probabilities sum to ~1.0
     sums = probas.sum(axis=1)
     np.testing.assert_allclose(sums, np.ones(len(samples)), atol=1e-3)
+

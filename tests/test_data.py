@@ -44,3 +44,4 @@ def test_hi_reviews_test_csv():
     assert f.stat().st_size <= MAX_SIZE_BYTES, "hi_reviews_test.csv exceeds 5MB limit"
     df = pd.read_csv(f)
     assert set(["text", "label", "source"]).issubset(df.columns)
+

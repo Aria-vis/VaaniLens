@@ -1,0 +1,15 @@
+transformers
+sentencepiece
+sacremoses
+sacrebleu
+datasets
+scikit-learn
+spacy
+nltk
+lime
+streamlit
+pandas
+numpy
+matplotlib
+joblib
+pytest
