@@ -347,7 +347,7 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
 
 ### 7.1 Swapnil: classification, sentiment, chatbot, fairness
 
-- [ ] **SW-01** HUMAN: create the repo | Est: 10m | Needs: none
+- [x] **SW-01** HUMAN: create the repo | Est: 10m | Needs: none (done 2026-11-01, b9003ab)
   - Do: create a GitHub repo `vaanilens`; add Kaushik and Tathya under Settings > Collaborators; add this file as `PROJECT.md`; push to `main`. (If someone else creates the repo, change this task's owner note and tell the team.)
   - Done when: all three people can `git push` to the repo.
 
@@ -552,6 +552,7 @@ Never cut: sentiment baseline vs transformer, NMT + BLEU, NER evaluation, bias t
 Format: `YYYY-MM-DD HH:MM | ID | one-line note`. **Append only inside your own section.**
 
 ### Swapnil: work log
+2026-11-01 19:58 | SW-01 | Created GitHub repo and pushed initial commit.
 
 
 ### Kaushik: work log
@@ -673,3 +674,4 @@ Format: `FROM | date | request | status (open/done)`
 ## 14. Change log (append-only, anyone may add)
 
 - Initial plan written. Sections 1 to 14 define protocol, tasks, ownership and deliverables.
+
