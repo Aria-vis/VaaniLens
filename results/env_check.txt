@@ -1,0 +1,7 @@
+Python version: 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]
+PyTorch version: 2.9.1+cpu (CUDA available: False)
+Transformers version: 5.22.1
+DistilBERT SST-2 test result: [{'label': 'POSITIVE', 'score': 0.9996379613876343}]
+spaCy version: 3.8.18
+spaCy NER entities test: [('Apple', 'ORG'), ('iPhone', 'ORG'), ('California', 'GPE')]
+MarianMT tiny translation ('नमस्ते दुनिया'): Hello World
