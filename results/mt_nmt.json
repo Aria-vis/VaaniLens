@@ -1,0 +1,8 @@
+{
+  "system": "Neural MT (MarianMT)",
+  "test_pairs_count": 50,
+  "bleu": 29.84,
+  "chrf": 52.93,
+  "total_seconds": 139.72,
+  "seconds_per_sentence": 2.7944
+}
