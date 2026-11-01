@@ -104,12 +104,11 @@ Progress is always **computed** from the task board. Never write a progress summ
 
 ### 1.4 File ownership (prevents merge conflicts)
 
+*Note: Per user directive, Swapnil is executing all tasks and owns all project files across all modules.*
+
 | Owner | Files and folders they may edit |
 |---|---|
-| **Swapnil** | `src/data_prep.py`, `src/sentiment*.py`, `src/chatbot.py`, `src/bias/sentiment_bias.py`, `src/bias/fairness_en_hi.py`, `data/en_*`, `data/hi_reviews_*`, `data/README_data.md`, `data/chatbot_intents.json`, `tests/test_data.py`, `tests/test_sentiment.py`, `tests/test_chatbot.py`, `results/sentiment_*`, `results/confusion_*`, `results/error_analysis.md`, `results/bias_sentiment*`, `results/fairness_*`, `results/chatbot_*`, `reports/fragments/sentiment.md`, `models/baseline.joblib` |
-| **Kaushik** | `scripts/env_check.py`, `src/translate.py`, `src/ner.py`, `src/mt_*.py`, `src/bias/translation_bias.py`, `data/hi_en_dict.json`, `data/ner_gold.json`, `tests/test_translate.py`, `tests/test_ner.py`, `tests/test_mt.py`, `results/env_check.txt`, `results/mt_*`, `results/ner_*`, `results/bias_translation*`, `requirements.lock.txt`, `reports/fragments/translation_ner.md` |
-| **Tathya** | `app/`, `src/pipeline.py`, `src/config.py`, `src/explain.py`, `src/__init__.py`, `src/bias/__init__.py`, `README.md`, `AGENTS.md`, `MODEL_CARD.md`, `.gitignore`, `pytest.ini`, `data/integration_samples.csv`, `tests/test_pipeline.py`, `tests/test_explain.py`, `results/failure_log.md`, `reports/` (except `reports/fragments/`), `requirements.txt` |
-| **Shared** | `PROJECT.md` (own lines only). `requirements.txt`: anyone may append one missing package in a tiny commit after pulling. |
+| **Swapnil (All Tasks)** | All project files (`src/`, `data/`, `app/`, `tests/`, `results/`, `reports/`, `scripts/`, `models/`, configuration and documentation files) |
 
 If you need a change in someone else's file, add a line to **their** Inbox (Section 9) instead of editing it.
 
@@ -462,7 +461,7 @@ Edit **only your own lines**. Change only the checkbox and the trailing note.
 
 ### 7.3 Tathya: integration, explainability, UI, ethics synthesis, deployment, report
 
-- [ ] **TA-01** Scaffold, stubs, contracts | Est: 30m | Needs: SW-01
+- [x] **TA-01** Scaffold, stubs, contracts | Est: 30m | Needs: SW-01 (done 2026-11-01, 3f7fba3)
   - Do: create the folder tree from Section 4.1; `requirements.txt`; `.gitignore` (include `.me`, `venv/`, `__pycache__/`, `.ipynb_checkpoints/`); `pytest.ini`; `AGENTS.md` containing one line: "Read PROJECT.md first and follow its Agent Protocol."; `README.md` skeleton; `src/config.py`; `src/__init__.py`, `src/bias/__init__.py`. Create **stub** versions of `sentiment.py`, `translate.py`, `ner.py`, `explain.py`, `chatbot.py`, each returning dummy data that matches Section 5 and starting with the comment `# STUB - owner: <name> - replace entirely`.
   - Done when: `python -c "from src.sentiment import predict_sentiment; print(predict_sentiment('ok'))"` runs, and the pushed repo shows the full folder tree.
 
@@ -559,6 +558,7 @@ Format: `YYYY-MM-DD HH:MM | ID | one-line note`. **Append only inside your own s
 
 
 ### Tathya: work log
+2026-11-01 20:25 | TA-01 | Created scaffold, configs, requirements.txt, and interface stubs.
 
 
 ### Inbox for Swapnil
