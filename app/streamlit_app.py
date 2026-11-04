@@ -3,11 +3,10 @@
 Main Streamlit Application.
 Tabs:
 1. Analyze (Multilingual review analysis with LIME & NER)
-2. Chat (VaaniBot intent dialog system)
-3. Models (Baseline vs Transformer benchmark)
-4. MT Showdown (Rule-based vs SMT vs Neural MT)
-5. Bias Audit (Demographic sentiment disparity & translation gender bias)
-6. About (Ethics, Model Card, and Privacy)
+2. Models (Baseline vs Transformer benchmark)
+3. MT Showdown (Rule-based vs SMT vs Neural MT)
+4. Bias Audit (Demographic sentiment disparity & translation gender bias)
+5. About (Ethics, Model Card, and Privacy)
 """
 
 import sys
@@ -27,7 +26,6 @@ if os.environ.get("VAANI_OFFLINE") == "1":
     os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
 from src.pipeline import analyze
-from src.chatbot import chat
 from src.explain import highlight_html
 from src.ner import LABEL_DESCRIPTIONS
 from src.pixel_trail import render_pixel_trail
@@ -58,9 +56,8 @@ RESULTS_DIR = PROJECT_ROOT / "results"
 # Interactive WebGL2 PixelTrail Hero Banner (React Bits Component)
 render_pixel_trail(height=185)
 
-tab_analyze, tab_chat, tab_models, tab_mt, tab_bias, tab_about = st.tabs([
+tab_analyze, tab_models, tab_mt, tab_bias, tab_about = st.tabs([
     "🔍 Analyze",
-    "💬 VaaniBot (Chat)",
     "📊 Sentiment Models",
     "🌐 MT Showdown",
     "⚖️ Bias & Fairness Audit",
@@ -154,44 +151,7 @@ with tab_analyze:
             st.write("No named entities detected.")
 
 # -------------------------------------------------------------
-# TAB 2: CHATBOT (VAANIBOT)
-# -------------------------------------------------------------
-with tab_chat:
-    st.header("💬 VaaniBot: Dialogue Assistant")
-    st.markdown("Chat with VaaniBot to query analysis results, explore entities, ask why flags were raised, or discuss bias and privacy.")
-
-    if "chat_history" not in st.session_state:
-        st.session_state["chat_history"] = []
-    if "chat_state" not in st.session_state:
-        st.session_state["chat_state"] = {}
-
-    for msg in st.session_state["chat_history"]:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
-
-    user_query = st.chat_input("Ask VaaniBot a question (e.g., 'why this label?', 'show entities', 'is data stored?')")
-    if user_query:
-        st.session_state["chat_history"].append({"role": "user", "content": user_query})
-        with st.chat_message("user"):
-            st.markdown(user_query)
-
-        # Process through VaaniBot
-        bot_res = chat(user_query, state=st.session_state["chat_state"])
-        st.session_state["chat_state"] = bot_res["state"]
-
-        with st.chat_message("assistant"):
-            st.markdown(bot_res["reply"])
-            st.caption(f"Intent: `{bot_res['intent']}` | Confidence: `{bot_res['confidence']:.1%}`")
-            if bot_res.get("escalate"):
-                st.error("🚨 Support Escalation: A representative has been alerted.")
-
-        st.session_state["chat_history"].append({
-            "role": "assistant",
-            "content": f"{bot_res['reply']}\n\n*(Intent: `{bot_res['intent']}`, Confidence: `{bot_res['confidence']:.1%}`)*"
-        })
-
-# -------------------------------------------------------------
-# TAB 3: SENTIMENT MODELS BENCHMARK
+# TAB 2: SENTIMENT MODELS BENCHMARK
 # -------------------------------------------------------------
 with tab_models:
     st.header("📊 Sentiment Classification Benchmark")
@@ -241,7 +201,7 @@ with tab_models:
                 st.image(str(trans_cm_img), use_container_width=True)
 
 # -------------------------------------------------------------
-# TAB 4: MT SHOWDOWN
+# TAB 3: MT SHOWDOWN
 # -------------------------------------------------------------
 with tab_mt:
     st.header("🌐 Machine Translation Paradigm Showdown")
@@ -258,7 +218,7 @@ with tab_mt:
             st.markdown(f.read())
 
 # -------------------------------------------------------------
-# TAB 5: BIAS & FAIRNESS AUDIT
+# TAB 4: BIAS & FAIRNESS AUDIT
 # -------------------------------------------------------------
 with tab_bias:
     st.header("⚖️ Algorithmic Bias & Cross-Lingual Fairness Audit")
@@ -298,7 +258,7 @@ with tab_bias:
         st.info(f"**Disparity Gap**: {fair_data['f1_gap']:.4f} Macro-F1 gap | **95% Bootstrap CI**: [{fair_data['f1_gap_95_bootstrap_ci'][0]:.4f}, {fair_data['f1_gap_95_bootstrap_ci'][1]:.4f}].\n\n*Caveat*: {fair_data['caveat']}")
 
 # -------------------------------------------------------------
-# TAB 6: ABOUT & ETHICS
+# TAB 5: ABOUT & ETHICS
 # -------------------------------------------------------------
 with tab_about:
     st.header("ℹ️ About VaaniLens & Ethical Considerations")

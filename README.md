@@ -19,7 +19,7 @@ license: mit
 [![Transformers](https://img.shields.io/badge/Transformers-HuggingFace-orange.svg)](https://huggingface.co/)
 [![Tests Passing](https://img.shields.io/badge/Tests-100%25%20Passing-brightgreen.svg)]()
 
-VaaniLens is a comprehensive, production-grade Natural Language Processing system for multilingual review analysis in **Hindi** and **English**. It combines cross-lingual neural machine translation, dual-paradigm sentiment classification, named entity recognition, local LIME explainability, algorithmic bias and fairness audits, and an interactive dialogue assistant (**VaaniBot**)—engineered to execute **100% locally on CPU at ₹0 / $0 budget** with strict data privacy.
+VaaniLens is a comprehensive, production-grade Natural Language Processing system for multilingual review analysis in **Hindi** and **English**. It combines cross-lingual neural machine translation, dual-paradigm sentiment classification, named entity recognition, local LIME explainability, and algorithmic bias and fairness audits—engineered to execute **100% locally on CPU at ₹0 / $0 budget** with strict data privacy.
 
 ---
 
@@ -38,7 +38,6 @@ VaaniLens is a comprehensive, production-grade Natural Language Processing syste
    - *Demographic Sentiment Audit*: Measures disparity across Religion, Gender, Region, and Nationality.
    - *Cross-Lingual Fairness*: English vs Hindi Macro-F1 gap evaluated with 1,000 bootstrap confidence intervals.
    - *Privacy by Design*: Purely in-memory evaluation; zero user reviews or personal texts are stored to disk.
-7. **VaaniBot Dialogue System**: Intent-based conversational assistant (90.9% test accuracy across 11 intents) with empathy escalation and transparent disclosure.
 
 ---
 
@@ -55,7 +54,6 @@ Every figure in this table is strictly traceable to artifacts in the `results/` 
 | **Statistical MT (IBM Model 1)** | BLEU / chrF | 4.68 / 32.56 | `results/mt_smt.json` |
 | **Rule-Based MT** | BLEU / chrF | 1.88 / 22.65 | `results/mt_rule_based.json` |
 | **spaCy Named Entity Recognition** | Strict Macro-F1 | **64.90%** (P: 74.24%, R: 57.65%) | `results/ner_eval.json` |
-| **VaaniBot Dialogue System** | Intent Test Accuracy | **90.9%** (40/44 correct) | `results/chatbot_eval.json` |
 
 ---
 
@@ -81,7 +79,6 @@ VaaniLens/
 │   ├── translate.py               # Devanagari detection & MarianMT translator
 │   ├── ner.py                     # spaCy entity extractor & evaluator
 │   ├── explain.py                 # LIME local explainability module
-│   ├── chatbot.py                 # VaaniBot intent dialog system
 │   ├── mt_rule_based.py           # Rule-based MT with SOV->SVO reordering
 │   ├── mt_smt.py                  # IBM Model 1 statistical MT
 │   ├── mt_evaluation.py           # SacreBLEU & chrF benchmark runner

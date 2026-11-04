@@ -128,10 +128,8 @@ Deep neural networks present black-box risks where decisions cannot be audited f
    - The pipeline continuously computes the posterior classification confidence $P(\hat{y} \mid x)$.
    - If confidence is below $0.75$, the system refuses to output an unverified automated decision and flags `needs_human_review = True`.
    - In our 30-sample integration stress test (`results/failure_log.md`), 3 ambiguous reviews were safely gated for human intervention with 0 system crashes.
-2. **Bot Transparency**:
-   - In compliance with autonomous disclosure standards, VaaniBot's initial conversational turn explicitly self-identifies: *"I am VaaniBot, an automated assistant for multilingual review analysis."*
-3. **Sentiment-Aware Empathy & Escalation**:
-   - Highly frustrated or aggressive user messages trigger automated escalation (`escalate = True`), routing the interaction to human customer service.
+2. **Translation Gender Guarding**:
+   - The pipeline systematically audits MarianMT outputs for hallucinated gender pronouns derived from gender-neutral Hindi roots, tagging suspicious outputs for review.
 
 ---
 

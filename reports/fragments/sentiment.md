@@ -1,7 +1,7 @@
-# Sentiment Analysis, Fairness & Dialogue Report Fragment (SW-09)
+# Sentiment Analysis & Fairness Report Fragment
 
 **Author**: Swapnil  
-**Scope**: Sentiment classification, error analysis, cross-lingual fairness, demographic bias, and VaaniBot dialogue system.
+**Scope**: Sentiment classification, error analysis, cross-lingual fairness, and demographic bias.
 
 ---
 
@@ -17,7 +17,7 @@ Both models were benchmarked on a strictly held-out test split of 1,000 balanced
 
 ## 2. Quantitative Results
 
-All numbers originate directly from `results/sentiment_baseline_metrics.json`, `results/sentiment_transformer_metrics.json`, `results/fairness_en_vs_hi.json`, `results/bias_sentiment_summary.md`, and `results/chatbot_eval.json`.
+All numbers originate directly from `results/sentiment_baseline_metrics.json`, `results/sentiment_transformer_metrics.json`, `results/fairness_en_vs_hi.json`, and `results/bias_sentiment_summary.md`.
 
 ### Table 1: Sentiment Benchmark on 1,000 English Reviews
 | Metric | TF-IDF + Logistic Regression | DistilBERT SST-2 | Delta |
@@ -47,17 +47,7 @@ All numbers originate directly from `results/sentiment_baseline_metrics.json`, `
 
 ---
 
-## 3. VaaniBot Dialogue System
-
-VaaniBot implements an intent-driven dialogue agent with state tracking and sentiment-aware empathy escalation without requiring any commercial LLM API:
-- **Architecture**: TF-IDF + Logistic Regression trained on 11 distinct customer service intents.
-- **Evaluation**: Benchmarked on 44 held-out test utterances, achieving an overall accuracy of **90.9%** (40/44 correct).
-- **Empathy Escalation**: User messages expressing severe frustration or anger automatically trigger `escalate = True` for human agent handoff.
-- **Transparency**: First conversational turn always discloses: *"I am VaaniBot, an automated assistant for multilingual review analysis."*
-
----
-
-## 4. Key Findings & Limitations
+## 3. Key Findings & Limitations
 
 1. **Transformer Superiority in Syntactic Binding**: DistilBERT reduces False Positives by nearly 50% relative to the baseline because self-attention correctly binds negation particles across clauses, overcoming the structural blind spot of bag-of-words models.
 2. **Elevated Demographic Sensitivity in Pretrained Weights**: DistilBERT demonstrated greater demographic sensitivity (religion disparity 0.1129, gender disparity 0.1055) than the baseline, confirming that uncurated web pretraining embeds societal stereotypes that persist post fine-tuning.

@@ -14,7 +14,6 @@ Following the standard Model Cards for Model Reporting framework (Mitchell et al
   - **Sentiment Analysis (Primary)**: DistilBERT SST-2 (`distilbert-base-uncased-finetuned-sst-2-english`), 6-layer Transformer, 66M parameters, 268 MB checkpoint.
   - **Sentiment Analysis (Baseline Benchmark)**: TF-IDF (1-2 grams, 50,000 features) + Logistic Regression ($C=1.0$, L2 penalty).
   - **Explainability**: Local Interpretable Model-agnostic Explanations (LIME), $N=200$ local perturbations.
-  - **Dialogue System**: VaaniBot, TF-IDF + Logistic Regression intent classifier across 11 intents with empathy escalation.
 - **Developers**: Swapnil (Lead Developer & Engineer)
 - **License**: Apache 2.0 / MIT Academic Open Source
 - **Release Date**: November 2026
@@ -70,7 +69,6 @@ Following the standard Model Cards for Model Reporting framework (Mitchell et al
 2. **Hindi Sentiment Test Set**: 100 curated authentic reviews (`data/hi_reviews_test.csv`) covering complex negation, colloquial phrasing, and sarcasm.
 3. **Machine Translation Benchmark Set**: 50 parallel Hindi-English test pairs (`data/hi_en_test_manual.csv`) covering diverse sentence lengths and idioms.
 4. **NER Gold Test Set**: 40 annotated sentences (`data/ner_gold.json`) spanning ORG, PERSON, GPE, DATE, and PRODUCT.
-5. **Chatbot Held-out Test Set**: 44 held-out natural language queries across 11 conversational intents.
 
 ---
 

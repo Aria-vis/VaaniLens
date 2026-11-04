@@ -73,7 +73,7 @@ spaCy NER                     LIME Explainer                Confidence Gate
    │                              │                              │
    └──────────────────────────────┴──────────────────────────────┘
                                   ▼
-             Streamlit Dashboard & VaaniBot Dialog System
+                    Interactive Streamlit Dashboard
 ```
 
 ---
@@ -161,17 +161,14 @@ Evaluated on 40 gold-annotated consumer review sentences (`results/ner_eval.json
 ---
 
 <!-- Slide 9 -->
-## 🤖 VaaniBot & Active Safety Harness
+## 🛡️ Active Safety Harness & Human Oversight
 
-- **VaaniBot Architecture**:
-  - TF-IDF + Logistic Regression across 11 customer service intents.
-  - **90.9% Accuracy** (40/44 correct on strictly held-out test queries).
-  - Empathy & Escalation: Frustrated messages trigger `escalate = True`.
-  - Transparency: Always identifies as an automated assistant on turn 1.
 - **Operational Safety Gates**:
-  - 🛡️ **Confidence Review Gate**: $P < 0.75 \to$ `needs_human_review = True`.
-  - 🔒 **Zero-Retention Privacy**: Purely in-memory evaluation; zero logging to disk.
-  - 💡 **LIME Interpretability**: Token-level feature attribution highlights green/red weights.
+  - 🛡️ **Confidence Review Gate**: $P < 0.75 \to$ `needs_human_review = True` (amber warning banner).
+  - ⚠️ **Translation Gender Pronoun Guard**: Flags inferred binary pronouns from gender-neutral Hindi roots (*वह/वो*).
+  - 🔒 **Zero-Retention Privacy**: Purely in-memory evaluation; zero logging or serialization to disk.
+  - 💡 **LIME Interpretability**: Token-level feature attribution highlights green/red contribution weights.
+  - 🚨 **Edge Case Failure Logging**: Automatic diagnostic logging for ambiguous and extreme inputs.
 
 ---
 
@@ -183,7 +180,7 @@ Evaluated on 40 gold-annotated consumer review sentences (`results/ner_eval.json
 2. **Translation is Not Ethically Neutral**:
    - Neural MT actively introduces societal gender stereotypes from gender-neutral languages; automated pronoun detection is mandatory.
 3. **Production NLP on a ₹0 Budget is Achievable**:
-   - High-accuracy multilingual triage, explainability, and dialog systems can run completely offline on local CPU hardware with 0 API costs.
+   - High-accuracy multilingual triage, explainability, and ethics audits run completely offline on local CPU hardware with 0 API costs.
 
 **Repository**: [github.com/Aria-vis/VaaniLens](https://github.com/Aria-vis/VaaniLens)
 

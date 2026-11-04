@@ -19,7 +19,7 @@ Common industry workarounds—such as forwarding untrusted customer data to clos
 3. **Silent Demographic Bias Propagation**: Pretrained commercial models silently introduce western or majoritarian cultural biases and hallucinate gender stereotypes during cross-lingual transfer without oversight.
 4. **Opaque Black-Box Predictions**: Neural text classifiers lack local interpretability, making it impossible for human quality teams to audit why a critical customer complaint was dismissed or marked positive.
 
-**VaaniLens** solves these challenges by providing a 100% offline, zero-marginal-cost ($\$0$ / ₹0) open-source pipeline that runs entirely on commodity CPU infrastructure. VaaniLens integrates cross-lingual translation, deep transformer sentiment classification, named entity recognition, local LIME explainability, autonomous safety gating, and a dialogue system (VaaniBot)—backed by rigorous ethical and bias audits.
+**VaaniLens** solves these challenges by providing a 100% offline, zero-marginal-cost ($\$0$ / ₹0) open-source pipeline that runs entirely on commodity CPU infrastructure. VaaniLens integrates cross-lingual translation, deep transformer sentiment classification, named entity recognition, local LIME explainability, and autonomous safety gating—backed by rigorous ethical and bias audits.
 
 ---
 
@@ -41,7 +41,7 @@ flowchart TD
     J -- "Confidence < 0.75" --> K["needs_human_review = True (Amber Banner)"]
     J -- "Confidence >= 0.75" --> L["Automated Verification Passed"]
     H --> M["LIME Explainability (N=200 Local Perturbations)"]
-    I --> N["Interactive Streamlit UI & VaaniBot Dialog System"]
+    I --> N["Interactive Streamlit Dashboard"]
     K --> N
     L --> N
     M --> N
@@ -168,17 +168,7 @@ Comparing native English reviews ($N=1,000$) against translated Hindi reviews ($
 
 ---
 
-## 8. VaaniBot Intent Dialogue System
-
-VaaniBot provides an autonomous customer assistant supporting 11 distinct operational intents (`results/chatbot_eval.json`, `results/chatbot_sample_dialog.md`):
-- **Model**: TF-IDF + Logistic Regression ($C=10.0$, `sublinear_tf=True`) trained on curated intent patterns.
-- **Accuracy**: **90.9%** (40/44 correct on strictly held-out natural language queries).
-- **Empathy Escalation**: Strongly frustrated or angry messages trigger `escalate = True` for human handoff.
-- **Transparency**: Discloses automated assistant status on the opening turn.
-
----
-
-## 9. Conclusion & Recommendations
+## 8. Conclusion & Recommendations
 
 VaaniLens successfully demonstrates that production-grade multilingual review analysis, explainability, and ethics auditing can be achieved at **Rs 0 budget** using open-source models running locally on CPU.
 
