@@ -29,6 +29,7 @@ from src.pipeline import analyze
 from src.chatbot import chat
 from src.explain import highlight_html
 from src.ner import LABEL_DESCRIPTIONS
+from src.pixel_trail import render_pixel_trail
 
 st.set_page_config(
     page_title="VaaniLens | Multilingual NLP & Ethics",
@@ -52,6 +53,9 @@ st.sidebar.info(
 )
 
 RESULTS_DIR = PROJECT_ROOT / "results"
+
+# Interactive WebGL2 PixelTrail Hero Banner (React Bits Component)
+render_pixel_trail(height=185)
 
 tab_analyze, tab_chat, tab_models, tab_mt, tab_bias, tab_about = st.tabs([
     "🔍 Analyze",
