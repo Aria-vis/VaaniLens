@@ -1,4 +1,4 @@
-"""Unit tests for language detection and MarianMT translation (owner: Kaushik/Swapnil)."""
+"""Unit tests for language detection and MarianMT translation (owner: Swapnil)."""
 
 import pytest
 from src.translate import detect_language, translate_hi_to_en

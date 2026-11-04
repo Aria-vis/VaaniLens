@@ -1,4 +1,4 @@
-"""Named Entity Recognition module (owner: Kaushik/Swapnil).
+"""Named Entity Recognition module (owner: Swapnil).
 
 Uses spaCy en_core_web_sm to extract entities from review text.
 Offsets refer to the English text passed in.

@@ -1,4 +1,4 @@
-"""End-to-end analysis pipeline for VaaniLens (owner: Tathya/Swapnil).
+"""End-to-end analysis pipeline for VaaniLens (owner: Swapnil).
 
 Integrates:
 - Language detection & translation (MarianMT)

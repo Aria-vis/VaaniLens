@@ -1,4 +1,4 @@
-"""Environment check script (owner: Kaushik/Swapnil).
+"""Environment check script (owner: Swapnil).
 
 Loads:
 - MarianMT (Helsinki-NLP/opus-mt-hi-en)

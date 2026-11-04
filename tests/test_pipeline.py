@@ -1,4 +1,4 @@
-"""Unit tests for the end-to-end analysis pipeline (owner: Tathya/Swapnil)."""
+"""Unit tests for the end-to-end analysis pipeline (owner: Swapnil)."""
 
 import pytest
 from src.pipeline import analyze

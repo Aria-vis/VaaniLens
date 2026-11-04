@@ -1,4 +1,4 @@
-"""Translation and language detection module (owner: Kaushik/Swapnil).
+"""Translation and language detection module (owner: Swapnil).
 
 Provides:
 - detect_language(text): Devanagari character ratio detection.

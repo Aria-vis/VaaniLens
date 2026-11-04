@@ -1,4 +1,4 @@
-"""Explainability module using LIME (owner: Tathya/Swapnil).
+"""Explainability module using LIME (owner: Swapnil).
 
 Explains predictions of sentiment classifiers using LimeTextExplainer.
 Features:

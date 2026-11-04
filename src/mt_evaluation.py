@@ -1,4 +1,4 @@
-"""Machine Translation Evaluation and Benchmark Showdown (owner: Kaushik/Swapnil).
+"""Machine Translation Evaluation and Benchmark Showdown (owner: Swapnil).
 
 Evaluates and compares:
 1. Rule-Based MT (dictionary + morphological reordering)

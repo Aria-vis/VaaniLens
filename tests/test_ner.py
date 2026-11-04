@@ -1,4 +1,4 @@
-"""Unit tests for Named Entity Recognition (owner: Kaushik/Swapnil)."""
+"""Unit tests for Named Entity Recognition (owner: Swapnil)."""
 
 import pytest
 from src.ner import extract_entities, LABEL_DESCRIPTIONS

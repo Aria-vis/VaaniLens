@@ -1,4 +1,4 @@
-"""Gender bias audit in Neural Machine Translation (owner: Kaushik/Swapnil).
+"""Gender bias audit in Neural Machine Translation (owner: Swapnil).
 
 Audits MarianMT (Helsinki-NLP/opus-mt-hi-en) on 60 gender-neutral Hindi sentences:
 - 20 occupations across stereotypically male, female, and neutral roles.

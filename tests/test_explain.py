@@ -1,4 +1,4 @@
-"""Unit tests for LIME explainability module (owner: Tathya/Swapnil)."""
+"""Unit tests for LIME explainability module (owner: Swapnil)."""
 
 import pytest
 from src.explain import explain

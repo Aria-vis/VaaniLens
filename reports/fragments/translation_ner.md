@@ -1,6 +1,6 @@
-# Machine Translation & Named Entity Recognition Report Fragment (KA-09)
+# Machine Translation & Named Entity Recognition Report Fragment
 
-**Author**: Kaushik (executed by Swapnil)  
+**Author**: Swapnil  
 **Scope**: Machine translation paradigm benchmark (Rule-Based vs SMT vs NMT), translation gender bias audit, and spaCy Named Entity Recognition evaluation.
 
 ---

@@ -1,4 +1,4 @@
-"""Rule-based Hindi to English Machine Translation (owner: Kaushik/Swapnil).
+"""Rule-based Hindi to English Machine Translation (owner: Swapnil).
 
 Explicit Linguistic Transformation Rules:
 1. Lexical Lookup: Word-by-word dictionary translation using curated lexicon (data/hi_en_dict.json).

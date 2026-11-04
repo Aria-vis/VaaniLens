@@ -1,4 +1,4 @@
-"""Mini Statistical Machine Translation using IBM Model 1 (owner: Kaushik/Swapnil).
+"""Mini Statistical Machine Translation using IBM Model 1 (owner: Swapnil).
 
 Linguistic Architecture & Limitations:
 This module implements a toy, word-level Statistical Machine Translation (SMT) system based

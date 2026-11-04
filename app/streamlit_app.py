@@ -318,10 +318,5 @@ with tab_about:
     ### Human-in-the-Loop Oversight Gate
     - Predictions with confidence $< 0.75$ trigger a yellow review banner (`needs_human_review = True`).
     - Hallucinated gender pronouns in machine translation automatically surface an inference warning.
-
-    ### Team Credits
-    - **Swapnil**: Sentiment Classification, Baseline vs Transformer, VaaniBot Dialog System, Fairness Metric.
-    - **Kaushik**: Machine Translation (RBMT, SMT, NMT), spaCy NER, Translation Gender Bias Audit.
-    - **Tathya**: Pipeline Orchestration, LIME Explainability, Streamlit UI, Ethics Synthesis & Report.
     """)
 

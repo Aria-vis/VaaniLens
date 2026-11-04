@@ -1,7 +1,7 @@
 # VaaniLens: Multilingual, Explainable Sentiment, Entity and Translation Analyzer
 
 > Module V mini-project (NLP Applications and Ethics)
-> Team: **Swapnil, Kaushik, Tathya** | Time budget: **2 days** | Money budget: **Rs 0**
+> Developer: **Swapnil** | Time budget: **2 days** | Money budget: **Rs 0**
 > Language support: Hindi + English | Everything runs on a laptop CPU with free tools.
 
 **Outcome targeted:** Develop NLP applications such as chatbots, translators, and sentiment analyzers with ethical considerations.

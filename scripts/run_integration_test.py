@@ -1,4 +1,4 @@
-"""Integration test runner (GATE-2) for VaaniLens (owner: Tathya/Swapnil).
+"""Integration test runner (GATE-2) for VaaniLens (owner: Swapnil).
 
 Runs the full pipeline on all 30 samples in data/integration_samples.csv:
 - 15 English, 15 Hindi
