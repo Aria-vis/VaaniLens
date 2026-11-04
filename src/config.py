@@ -2,9 +2,11 @@
 
 import os
 
-# Ensure models run fully offline using cached weights
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1"
+# Offline mode is enabled only when explicitly set via VAANI_OFFLINE=1.
+# By default, online model downloading is allowed for cloud deployment.
+if os.environ.get("VAANI_OFFLINE") == "1":
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
 CONF_THRESHOLD = 0.75
 LIME_SAMPLES = 200

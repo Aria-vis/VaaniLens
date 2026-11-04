@@ -641,3 +641,4 @@ def render_pixel_trail(
         subtitle=subtitle,
     )
     components.html(html_code, height=height, scrolling=False)
+

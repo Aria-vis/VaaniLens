@@ -27,9 +27,18 @@ def get_nlp():
         try:
             _nlp = spacy.load("en_core_web_sm")
         except Exception:
-            # Fallback if package is not yet linked
-            import en_core_web_sm
-            _nlp = en_core_web_sm.load()
+            try:
+                import en_core_web_sm
+                _nlp = en_core_web_sm.load()
+            except Exception:
+                # In fresh cloud deployments, auto-download spaCy model if missing
+                try:
+                    import spacy.cli
+                    spacy.cli.download("en_core_web_sm")
+                    _nlp = spacy.load("en_core_web_sm")
+                except Exception as e:
+                    print(f"Warning: Failed to load or download en_core_web_sm: {e}")
+                    _nlp = spacy.blank("en")
     return _nlp
 
 

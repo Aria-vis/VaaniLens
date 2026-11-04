@@ -11,9 +11,9 @@ import os
 import json
 from pathlib import Path
 
-# Ensure offline execution with cached models
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1"
+if os.environ.get("VAANI_OFFLINE") == "1":
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

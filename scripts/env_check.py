@@ -13,8 +13,9 @@ import subprocess
 from pathlib import Path
 
 # Ensure offline execution with cached models
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1"
+if os.environ.get("VAANI_OFFLINE") == "1":
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)

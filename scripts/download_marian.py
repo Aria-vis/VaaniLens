@@ -3,7 +3,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-SNAPSHOT_DIR = Path(r"C:\Users\Swapnil\.cache\huggingface\hub\models--Helsinki-NLP--opus-mt-hi-en\snapshots\a7d96a16729f812578bd55e7366147beda625d86")
+SNAPSHOT_DIR = Path.home() / ".cache" / "huggingface" / "hub" / "models--Helsinki-NLP--opus-mt-hi-en" / "snapshots" / "a7d96a16729f812578bd55e7366147beda625d86"
 SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
 
 files_to_download = [
