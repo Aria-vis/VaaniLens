@@ -92,15 +92,19 @@ with tab_analyze:
         ("Gender Neutral", "वह डॉक्टर है।")
     ]
 
-    selected_text = ""
+    if "review_input" not in st.session_state:
+        st.session_state["review_input"] = "यह फ़ोन बहुत अच्छा है, बैटरी पूरे दिन चलती है।"
+
+    def _set_example(text):
+        st.session_state["review_input"] = text
+
     for i, (label, ex_text) in enumerate(examples):
         with example_cols[i]:
-            if st.button(label, key=f"ex_btn_{i}"):
-                st.session_state["review_input"] = ex_text
+            st.button(label, key=f"ex_btn_{i}", on_click=_set_example, args=(ex_text,))
 
     review_text = st.text_area(
         "Enter Review Text:",
-        value=st.session_state.get("review_input", "यह फ़ोन बहुत अच्छा है, बैटरी पूरे दिन चलती है।"),
+        key="review_input",
         height=100
     )
 
@@ -133,6 +137,8 @@ with tab_analyze:
         # LIME Explanations
         if result["explanation"]:
             st.subheader("💡 Explainability (LIME Word Attributions)")
+            if result["language"] == "hi":
+                st.caption("ℹ️ Local token attributions computed on the neural English translation used by the sentiment engine.")
             st.markdown(
                 "Words highlighted in <span style='background-color:#2ecc71; color:white; padding:2px 6px; border-radius:4px;'>Green</span> pushed prediction toward **POSITIVE**; "
                 "<span style='background-color:#e74c3c; color:white; padding:2px 6px; border-radius:4px;'>Red</span> pushed toward **NEGATIVE**.",
@@ -143,6 +149,8 @@ with tab_analyze:
 
         # Named Entities
         st.subheader("🏷️ Extracted Named Entities (spaCy)")
+        if result["language"] == "hi":
+            st.caption("ℹ️ Entities and character offsets are extracted from the translated English text via spaCy en_core_web_sm.")
         if result["entities"]:
             ent_df = pd.DataFrame(result["entities"])
             ent_df["Description"] = ent_df["label"].map(lambda l: LABEL_DESCRIPTIONS.get(l, "General Entity"))

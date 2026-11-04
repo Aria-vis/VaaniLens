@@ -79,6 +79,7 @@ VaaniLens/
 │   ├── translate.py               # Devanagari detection & MarianMT translator
 │   ├── ner.py                     # spaCy entity extractor & evaluator
 │   ├── explain.py                 # LIME local explainability module
+│   ├── pixel_trail.py             # WebGL2 interactive hero banner component
 │   ├── mt_rule_based.py           # Rule-based MT with SOV->SVO reordering
 │   ├── mt_smt.py                  # IBM Model 1 statistical MT
 │   ├── mt_evaluation.py           # SacreBLEU & chrF benchmark runner
