@@ -74,6 +74,112 @@ RESULTS_DIR = PROJECT_ROOT / "results"
 # Interactive WebGL2 PixelTrail Hero Banner (React Bits Component)
 render_pixel_trail(height=185)
 
+# Global cursor trail effect: lightweight particle trail overlaying the entire Streamlit page.
+# Injected via st.markdown into the main DOM (not an iframe) so it tracks cursor across all tabs.
+# The canvas is fixed-position with pointer-events:none so all UI elements remain fully clickable.
+st.markdown("""
+<style>
+#global-cursor-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+</style>
+<canvas id="global-cursor-canvas"></canvas>
+<script>
+(function() {
+    const canvas = document.getElementById('global-cursor-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouseX = -100, mouseY = -100;
+    let prevX = -100, prevY = -100;
+    let animId = null;
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    document.addEventListener('mousedown', function(e) {
+        for (let i = 0; i < 8; i++) {
+            const angle = (i / 8) * Math.PI * 2 + Math.random() * 0.4;
+            const speed = 1.5 + Math.random() * 2.5;
+            particles.push({
+                x: e.clientX, y: e.clientY,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                life: 1.0, decay: 0.015 + Math.random() * 0.01,
+                size: 3 + Math.random() * 3,
+                hue: 270 + Math.random() * 60
+            });
+        }
+    });
+
+    function frame() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const dx = mouseX - prevX;
+        const dy = mouseY - prevY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > 3) {
+            const count = Math.min(Math.floor(dist / 6), 4);
+            for (let i = 0; i < count; i++) {
+                const t = i / count;
+                particles.push({
+                    x: prevX + dx * t + (Math.random() - 0.5) * 4,
+                    y: prevY + dy * t + (Math.random() - 0.5) * 4,
+                    vx: (Math.random() - 0.5) * 0.6,
+                    vy: (Math.random() - 0.5) * 0.6 - 0.3,
+                    life: 1.0,
+                    decay: 0.018 + Math.random() * 0.012,
+                    size: 2 + Math.random() * 2.5,
+                    hue: 270 + Math.random() * 60
+                });
+            }
+        }
+        prevX = mouseX;
+        prevY = mouseY;
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.02;
+            p.vx *= 0.98;
+            p.life -= p.decay;
+            if (p.life <= 0) {
+                particles.splice(i, 1);
+                continue;
+            }
+            const alpha = p.life * 0.6;
+            const r = p.size * p.life;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+            ctx.fillStyle = 'hsla(' + p.hue + ', 80%, 65%, ' + alpha + ')';
+            ctx.fill();
+        }
+
+        if (particles.length > 200) particles.splice(0, particles.length - 200);
+        animId = requestAnimationFrame(frame);
+    }
+    frame();
+})();
+</script>
+""", unsafe_allow_html=True)
+
 # Initialize application navigation tabs across five primary analytical views
 tab_analyze, tab_models, tab_mt, tab_bias, tab_about = st.tabs([
     "🔍 Analyze",
