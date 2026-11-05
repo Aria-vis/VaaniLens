@@ -185,8 +185,15 @@ with tab_analyze:
             )
             # Generate XSS-safe highlighted HTML snippet
             html_viz = highlight_html(result["text_for_analysis"], result["explanation"])
-            # Render highlighted review text container
-            st.markdown(f"<div style='font-size:18px; line-height:2.0; padding:12px; background:#f8f9fa; border-radius:8px;'>{html_viz}</div>", unsafe_allow_html=True)
+            # Render highlighted review text container adapting dynamically to Streamlit light/dark theme
+            container_style = (
+                "font-size: 18px; line-height: 2.2; padding: 14px 18px; "
+                "background-color: var(--secondary-background-color, rgba(128, 128, 128, 0.08)); "
+                "color: var(--text-color, inherit); "
+                "border: 1px solid rgba(128, 128, 128, 0.25); "
+                "border-radius: 8px; margin-top: 8px; margin-bottom: 8px;"
+            )
+            st.markdown(f"<div style='{container_style}'>{html_viz}</div>", unsafe_allow_html=True)
 
         # Named Entity Recognition section: Surface extracted entities from spaCy
         st.subheader("🏷️ Extracted Named Entities (spaCy)")

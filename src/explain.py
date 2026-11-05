@@ -116,15 +116,25 @@ def highlight_html(text: str, weights: List[Tuple[str, float]]) -> str:
 
         # Sanitize text to prevent HTML injection attacks
         escaped_word = html.escape(word)
-        # Significant positive influence: renders green span with opacity scaled by weight magnitude
+        # Significant positive influence: renders green pill with contrast border and theme-inherited text color
         if wt > 0.05:
-            intensity = min(abs(wt) * 2.0, 0.8)
-            style = f"background-color: rgba(46, 204, 113, {intensity:.2f}); padding: 2px 4px; border-radius: 4px; margin: 0 1px; font-weight: 500;"
+            intensity = max(0.25, min(abs(wt) * 2.2, 0.75))
+            style = (
+                f"background-color: rgba(46, 204, 113, {intensity:.2f}); "
+                f"border: 1px solid rgba(46, 204, 113, 0.60); "
+                f"padding: 2px 6px; border-radius: 4px; margin: 0 2px; "
+                f"font-weight: 600; color: inherit; display: inline-block;"
+            )
             html_spans.append(f'<span style="{style}" title="Weight: {wt:+.3f}">{escaped_word}</span>')
-        # Significant negative influence: renders red span with white text for optimal contrast
+        # Significant negative influence: renders red pill with contrast border and theme-inherited text color
         elif wt < -0.05:
-            intensity = min(abs(wt) * 2.0, 0.8)
-            style = f"background-color: rgba(231, 76, 60, {intensity:.2f}); padding: 2px 4px; border-radius: 4px; margin: 0 1px; font-weight: 500; color: white;"
+            intensity = max(0.25, min(abs(wt) * 2.2, 0.75))
+            style = (
+                f"background-color: rgba(231, 76, 60, {intensity:.2f}); "
+                f"border: 1px solid rgba(231, 76, 60, 0.60); "
+                f"padding: 2px 6px; border-radius: 4px; margin: 0 2px; "
+                f"font-weight: 600; color: inherit; display: inline-block;"
+            )
             html_spans.append(f'<span style="{style}" title="Weight: {wt:+.3f}">{escaped_word}</span>')
         # Neutral word with negligible attribution weight: render unmodified plain text
         else:

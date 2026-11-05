@@ -2,8 +2,8 @@
 
 # Import pytest testing framework
 import pytest
-# Import LIME explainability generator from explain module
-from src.explain import explain
+# Import LIME explainability generator and HTML highlighter from explain module
+from src.explain import explain, highlight_html
 
 
 def test_explain_contract():
@@ -34,3 +34,26 @@ def test_explain_empty():
     """Asserts that empty input string safely yields an empty list of attributions."""
     # Verify zero-token input short-circuits to empty list without raising errors
     assert explain("", model="baseline") == []
+
+
+def test_highlight_html():
+    """Validates HTML markup generation for LIME word attributions.
+    
+    Verifies that positive words receive green styling, negative words receive
+    red styling, neutral words remain unstyled, and HTML entities are escaped.
+    """
+    # Sample text with positive, negative, and neutral tokens
+    text = "Great device but terrible battery & display"
+    # Simulated LIME weights
+    weights = [("great", 0.45), ("terrible", -0.52)]
+    # Generate highlighted HTML string
+    html_output = highlight_html(text, weights)
+    # Verify return is string
+    assert isinstance(html_output, str)
+    # Check green span for 'Great'
+    assert "background-color: rgba(46, 204, 113" in html_output
+    # Check red span for 'terrible'
+    assert "background-color: rgba(231, 76, 60" in html_output
+    # Check HTML ampersand escaping
+    assert "&amp;" in html_output
+
