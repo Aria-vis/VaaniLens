@@ -667,3 +667,143 @@ def render_pixel_trail(
     # Inject compiled HTML code into Streamlit page layout without vertical scrollbars
     components.html(html_code, height=height, scrolling=False)
 
+
+def get_global_cursor_trail_html() -> str:
+    """Generates the self-contained HTML/JS bundle for the global cursor particle trail.
+    
+    Accesses window.parent.document from inside the iframe (permitted under same-origin srcdoc)
+    and binds an interactive WebGL/Canvas2D particle trail across the entire top-level page viewport.
+    
+    Returns:
+        HTML markup string executing top-level DOM cursor event listeners and particle rendering.
+    """
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; width: 0; height: 0; overflow: hidden; background: transparent; }
+</style>
+</head>
+<body>
+<script>
+(function() {
+    try {
+        const pWin = window.parent;
+        if (!pWin || !pWin.document) return;
+        const pDoc = pWin.document;
+
+        // Prevent duplicate canvas or animation loops across Streamlit script reruns
+        if (pDoc.getElementById('vl-global-cursor-canvas')) return;
+
+        const canvas = pDoc.createElement('canvas');
+        canvas.id = 'vl-global-cursor-canvas';
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '999999';
+        pDoc.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = -100, mouseY = -100;
+        let prevX = -100, prevY = -100;
+
+        function resize() {
+            canvas.width = pWin.innerWidth;
+            canvas.height = pWin.innerHeight;
+        }
+        resize();
+        pWin.addEventListener('resize', resize);
+
+        pDoc.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }, { passive: true });
+
+        pDoc.addEventListener('mousedown', function(e) {
+            for (let i = 0; i < 10; i++) {
+                const angle = (i / 10) * Math.PI * 2 + Math.random() * 0.4;
+                const speed = 2.0 + Math.random() * 3.0;
+                particles.push({
+                    x: e.clientX, y: e.clientY,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    life: 1.0,
+                    decay: 0.018 + Math.random() * 0.01,
+                    size: 3 + Math.random() * 3,
+                    hue: 275 + Math.random() * 55
+                });
+            }
+        }, { passive: true });
+
+        function frame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const dx = mouseX - prevX;
+            const dy = mouseY - prevY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist > 2 && mouseX > 0 && mouseY > 0) {
+                const count = Math.min(Math.floor(dist / 5), 5);
+                for (let i = 0; i < count; i++) {
+                    const t = i / count;
+                    particles.push({
+                        x: prevX + dx * t + (Math.random() - 0.5) * 4,
+                        y: prevY + dy * t + (Math.random() - 0.5) * 4,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5 - 0.2,
+                        life: 1.0,
+                        decay: 0.02 + Math.random() * 0.012,
+                        size: 2.5 + Math.random() * 2.5,
+                        hue: 275 + Math.random() * 55
+                    });
+                }
+            }
+            prevX = mouseX;
+            prevY = mouseY;
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.015;
+                p.life -= p.decay;
+                if (p.life <= 0) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+                const alpha = p.life * 0.7;
+                const r = p.size * p.life;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+                ctx.fillStyle = 'hsla(' + p.hue + ', 85%, 65%, ' + alpha + ')';
+                ctx.fill();
+            }
+
+            if (particles.length > 250) particles.splice(0, particles.length - 250);
+            pWin.requestAnimationFrame(frame);
+        }
+        pWin.requestAnimationFrame(frame);
+    } catch (err) {
+        console.warn('Global cursor trail attachment failed:', err);
+    }
+})();
+</script>
+</body>
+</html>"""
+
+
+def render_global_cursor_trail() -> None:
+    """Renders the global cursor particle trail across the entire Streamlit page.
+    
+    Deploys a zero-pixel height iframe that attaches a fixed non-blocking canvas overlay
+    to window.parent.document, animating interactive purple/pink particles tracking mouse moves and clicks.
+    """
+    html_code = get_global_cursor_trail_html()
+    components.html(html_code, height=0, scrolling=False)
+
+
