@@ -315,46 +315,70 @@ with tab_bias:
     # Section header for algorithmic fairness and demographic audits
     st.header("⚖️ Algorithmic Bias & Cross-Lingual Fairness Audit")
 
-    # Allocate two columns for Identity Bias and Pronoun Bias audits
-    col_b1, col_b2 = st.columns(2)
+    # Responsive CSS styling to ensure tables never overflow columns and maintain comfortable spacing
+    st.markdown("""
+        <style>
+        [data-testid="stColumn"] {
+            min-width: 0 !important;
+        }
+        [data-testid="stColumn"] table {
+            display: block !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+            white-space: nowrap !important;
+            font-size: 0.82rem !important;
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+        [data-testid="stColumn"] th, [data-testid="stColumn"] td {
+            padding: 5px 8px !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Allocate two columns with a generous gap to completely separate the audit cards
+    col_b1, col_b2 = st.columns(2, gap="large")
     # Column 1: Identity-term counterfactual sentiment bias
     with col_b1:
-        st.subheader("1. Identity-Term Sentiment Bias")
-        st.markdown("Disparity across demographic terms (Religion, Gender, Region, Nationality) in identical templates.")
-        bias_sent_img = RESULTS_DIR / "bias_sentiment.png"
-        if bias_sent_img.exists():
-            st.image(str(bias_sent_img), use_container_width=True)
-        bias_sent_summary = RESULTS_DIR / "bias_sentiment_summary.md"
-        if bias_sent_summary.exists():
-            with open(bias_sent_summary, "r", encoding="utf-8") as f:
-                st.markdown(f.read())
+        with st.container(border=True):
+            st.subheader("1. Identity-Term Sentiment Bias")
+            st.markdown("Disparity across demographic terms (Religion, Gender, Region, Nationality) in identical templates.")
+            bias_sent_img = RESULTS_DIR / "bias_sentiment.png"
+            if bias_sent_img.exists():
+                st.image(str(bias_sent_img), use_container_width=True)
+            bias_sent_summary = RESULTS_DIR / "bias_sentiment_summary.md"
+            if bias_sent_summary.exists():
+                with open(bias_sent_summary, "r", encoding="utf-8") as f:
+                    st.markdown(f.read())
 
     # Column 2: Neural machine translation gender pronoun inference audit
     with col_b2:
-        st.subheader("2. NMT Gender Pronoun Bias")
-        st.markdown("Inferred English pronouns (he/she/they) from gender-neutral Hindi inputs across 20 professions.")
-        bias_trans_img = RESULTS_DIR / "bias_translation.png"
-        if bias_trans_img.exists():
-            st.image(str(bias_trans_img), use_container_width=True)
-        bias_trans_summary = RESULTS_DIR / "bias_translation_summary.md"
-        if bias_trans_summary.exists():
-            with open(bias_trans_summary, "r", encoding="utf-8") as f:
-                st.markdown(f.read())
+        with st.container(border=True):
+            st.subheader("2. NMT Gender Pronoun Bias")
+            st.markdown("Inferred English pronouns (he/she/they) from gender-neutral Hindi inputs across 20 professions.")
+            bias_trans_img = RESULTS_DIR / "bias_translation.png"
+            if bias_trans_img.exists():
+                st.image(str(bias_trans_img), use_container_width=True)
+            bias_trans_summary = RESULTS_DIR / "bias_translation_summary.md"
+            if bias_trans_summary.exists():
+                with open(bias_trans_summary, "r", encoding="utf-8") as f:
+                    st.markdown(f.read())
 
     # Horizontal divider between demographic and cross-lingual audits
     st.markdown("---")
-    # Subheader for English vs Translated Hindi performance gap analysis
-    st.subheader("3. Cross-Lingual Fairness: English vs Translated Hindi")
-    # Display cross-lingual metric bar chart and bootstrap CI error bar
-    fairness_img = RESULTS_DIR / "fairness_en_vs_hi.png"
-    if fairness_img.exists():
-        st.image(str(fairness_img), width=750)
-    # Load and display numerical bootstrap CI values and distribution caveat
-    fairness_json = RESULTS_DIR / "fairness_en_vs_hi.json"
-    if fairness_json.exists():
-        with open(fairness_json, "r", encoding="utf-8") as f:
-            fair_data = json.load(f)
-        st.info(f"**Disparity Gap**: {fair_data['f1_gap']:.4f} Macro-F1 gap | **95% Bootstrap CI**: [{fair_data['f1_gap_95_bootstrap_ci'][0]:.4f}, {fair_data['f1_gap_95_bootstrap_ci'][1]:.4f}].\n\n*Caveat*: {fair_data['caveat']}")
+    # Subheader for English vs Translated Hindi performance gap analysis enclosed in its own card
+    with st.container(border=True):
+        st.subheader("3. Cross-Lingual Fairness: English vs Translated Hindi")
+        # Display cross-lingual metric bar chart and bootstrap CI error bar
+        fairness_img = RESULTS_DIR / "fairness_en_vs_hi.png"
+        if fairness_img.exists():
+            st.image(str(fairness_img), width=750)
+        # Load and display numerical bootstrap CI values and distribution caveat
+        fairness_json = RESULTS_DIR / "fairness_en_vs_hi.json"
+        if fairness_json.exists():
+            with open(fairness_json, "r", encoding="utf-8") as f:
+                fair_data = json.load(f)
+            st.info(f"**Disparity Gap**: {fair_data['f1_gap']:.4f} Macro-F1 gap | **95% Bootstrap CI**: [{fair_data['f1_gap_95_bootstrap_ci'][0]:.4f}, {fair_data['f1_gap_95_bootstrap_ci'][1]:.4f}].\n\n*Caveat*: {fair_data['caveat']}")
 
 # -------------------------------------------------------------
 # TAB 5: ABOUT & ETHICS
