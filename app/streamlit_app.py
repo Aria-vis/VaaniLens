@@ -15,6 +15,8 @@ import sys
 import os
 # Import json for parsing metric summaries and benchmark records
 import json
+# Import importlib for handling dynamic module reloads across deployment file-watchers
+import importlib
 # Import Path for platform-independent filesystem path resolution
 from pathlib import Path
 # Import Streamlit framework for interactive web application UI rendering
@@ -41,8 +43,26 @@ from src.pipeline import analyze
 from src.explain import highlight_html
 # Import human-readable spaCy entity label definitions
 from src.ner import LABEL_DESCRIPTIONS
-# Import WebGL2 hero banner component and global cursor trail from custom Streamlit extension
-from src.pixel_trail import render_pixel_trail, render_global_cursor_trail
+# Import WebGL2 hero banner component and global cursor trail with hot-reload cache busting
+try:
+    import src.pixel_trail
+    importlib.reload(src.pixel_trail)
+except Exception:
+    pass
+
+try:
+    from src.pixel_trail import render_pixel_trail, render_global_cursor_trail
+except ImportError:
+    from src.pixel_trail import render_pixel_trail
+    def render_global_cursor_trail():
+        """Graceful fallback if Streamlit hot-reloading delays module resolution."""
+        try:
+            import streamlit.components.v1 as components
+            html_fn = getattr(src.pixel_trail, "get_global_cursor_trail_html", None)
+            if html_fn:
+                components.html(html_fn(), height=0, scrolling=False)
+        except Exception:
+            pass
 
 # Configure Streamlit browser tab title, favicon, and wide page layout
 st.set_page_config(
