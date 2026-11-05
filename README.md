@@ -57,6 +57,51 @@ Every figure in this table is strictly traceable to artifacts in the `results/` 
 
 ---
 
+## Pipeline
+
+              User Review
+                   |
+                   v
+           Language Detection
+           (if devnagri script >= 30%
+           Hindi else English)
+                   |
+             +-----+-----+
+             |           |
+          English       Hindi
+                    (RMBT, IBM Model 1, MarianMT)
+             |           |
+             |           |
+             |           |
+             +-----+-----+
+                   |
+                   v
+           English Text
+                   |
+          +--------+--------+
+          |                 |
+          v                 v
+    Sentiment Analysis     NER
+    (TF-IDF, Logistic Reg) (spacy/en_core_web_sm)
+    (DistilBERT)
+          |                 |
+          v                 v
+    Positive/Negative    Entities
+          |
+          v
+    Word Explanations (LIME)
+          |
+          v
+    Confidence Checking
+          |
+          v
+    Human Review Flag
+          |
+          v
+      Streamlit UI
+
+---
+
 ## 📁 Repository Layout
 
 ```
