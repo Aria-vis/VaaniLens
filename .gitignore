@@ -11,4 +11,6 @@ dist/
 build/
 *.egg-info/
 .vscode/
-
+PROJECT.md
+AGENTS.md
+MODEL_CARD.md

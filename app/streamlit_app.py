@@ -217,8 +217,14 @@ with tab_analyze:
 with tab_models:
     # Section header for offline benchmark comparison
     st.header("📊 Sentiment Classification Benchmark")
-    # Subtitle describing evaluation corpora and sample count
-    st.markdown("Comparison between the **TF-IDF + Logistic Regression Baseline** and **Pretrained DistilBERT SST-2 Transformer** on Amazon Polarity (1,000 test reviews).")
+    # Subtitle describing evaluation corpora and sample count with direct dataset repository links
+    st.markdown(
+        "Comparison between the **TF-IDF + Logistic Regression Baseline** and **Pretrained DistilBERT SST-2 Transformer** on Amazon Polarity (1,000 test reviews).\n\n"
+        "📁 **Evaluation Dataset**: [`data/en_test.csv` on GitHub](https://github.com/Aria-vis/VaaniLens/blob/main/data/en_test.csv) "
+        "*(1,000 balanced reviews: 500 positive, 500 negative)* &nbsp;|&nbsp; "
+        "📦 **Training Split**: [`data/en_train.csv`](https://github.com/Aria-vis/VaaniLens/blob/main/data/en_train.csv) *(5,000 reviews)* &nbsp;|&nbsp; "
+        "🌐 **Origin**: Hugging Face [`fancyzhx/amazon_polarity`](https://huggingface.co/datasets/fancyzhx/amazon_polarity)"
+    )
 
     # Paths to serialized evaluation metric JSON files
     base_metrics_file = RESULTS_DIR / "sentiment_baseline_metrics.json"
@@ -256,6 +262,14 @@ with tab_models:
         ])
         # Display comparative summary table
         st.dataframe(metrics_comparison, use_container_width=True)
+
+        # Expander allowing direct in-app inspection of the 1,000 evaluation reviews
+        with st.expander("📄 Preview Evaluation Dataset (data/en_test.csv - 1,000 samples)"):
+            en_test_file = PROJECT_ROOT / "data" / "en_test.csv"
+            if en_test_file.exists():
+                df_test_preview = pd.read_csv(en_test_file)
+                st.caption(f"Loaded {len(df_test_preview)} balanced rows (500 Positive, 500 Negative). Showing first 10 rows:")
+                st.dataframe(df_test_preview.head(10), use_container_width=True)
 
         # Allocate two columns for side-by-side confusion matrix figures
         col_cm1, col_cm2 = st.columns(2)
