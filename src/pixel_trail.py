@@ -6,7 +6,6 @@ Renders a high-performance WebGL2 interactive fluid pixel trail with gooey physi
 lighting shaders, and cursor burst interaction.
 """
 
-# Import Streamlit components v1 module to embed custom HTML/JS/WebGL2 in an isolated iframe
 import streamlit.components.v1 as components
 
 
@@ -41,7 +40,6 @@ def get_pixel_trail_html(
     Returns:
         Complete HTML markup with embedded CSS styling and JavaScript WebGL2 pipeline.
     """
-    # Return formatted HTML string interpolating dynamic banner titles and visual parameters
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -651,7 +649,6 @@ def render_pixel_trail(
     Renders an inline responsive HTML iframe hosting a fluid particle grid simulation
     driven by WebGL2 fragment shaders with zero external runtime dependencies.
     """
-    # Compile the full HTML document string containing canvas and WebGL2 shaders
     html_code = get_pixel_trail_html(
         height=height,
         grid_size=grid_size,
@@ -664,7 +661,6 @@ def render_pixel_trail(
         title=title,
         subtitle=subtitle,
     )
-    # Inject compiled HTML code into Streamlit page layout without vertical scrollbars
     components.html(html_code, height=height, scrolling=False)
 
 
